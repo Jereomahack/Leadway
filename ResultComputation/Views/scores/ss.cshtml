@@ -1,0 +1,825 @@
+﻿@model IEnumerable<LightWay.Models.score>
+
+@{
+    ViewBag.Title = "Learner's Result";
+}
+
+
+
+<div class="panel panel-primary hidden-print">
+    <div class="panel-heading">checking Result</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("IndexParent", "Scores", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            <div class="row">
+                <div class="col-md-3">
+                 <a style="color:red">Reg No:</a>   @Html.DropDownList("StudtNum", ViewBag.AdNum as SelectList, "Select Admission Number ", new { @class = "form-control input-sm" })
+                </div>
+                <div class="col-md-3">
+                    <a style="color:red">Term: </a>     @Html.DropDownList("Terms", ViewBag.Terms as SelectList, "Select Term", new { @class = "form-control input-sm" })
+                </div>
+                <div class="col-md-3">
+                    <a style="color:red">Accademic Year: </a>     @Html.TextBox("AccademicYear", ViewBag.AccademicYear as string, new { @class = "form-control input-sm", @readonly = true })
+                </div>
+                <div class="col-md-3">
+                    <br />
+                    <input type="submit" value="Check Result" class="btn btn-primary btn-sm" />
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+
+
+<div>
+    <div style="color:red;font-size:17px;text-align:center">
+        @ViewBag.NoDetails
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">Learners Result</div>
+        <div class="panel-body">
+            <div style="width:1030px">
+                <div style="width:100px;float:left">
+                    <img src="~/Content/images/school logo.png" width="100" height="90" />
+                </div>
+
+                <div style="width:800px;float:left">
+                    <p style="text-align:center;color:red;font-size:40px;font-family:Arial, Helvetica, sans-serif"><b>@ViewBag.School</b></p>
+                    <p style="text-align:center;color:blue;font-size:20px;font-family:Courier New, Courier, monospace" class="textcolor"><b>@ViewBag.Address</b></>
+                    <p style="text-align:center;color:dodgerblue;font-size:12px;font-family:Courier New, Courier, monospace">@ViewBag.Others</p>
+
+                    @if (ViewBag.Category == "Pre-Nursery")
+                    {
+                        <p style="text-align:center;color:black;font-size:15px"><b>PRE-NURSERY SCHOOL CONTINUOUS ASSESSMENT  REPORT</b></p>
+                    }
+                    else if (ViewBag.Category == "Nursery")
+                    {
+                        <p style="text-align:center;color:black;font-size:15px"><b>NUSERY SCHOOL CONTINUOUS ASSESSMENT  REPORT</b></p>
+                    }
+                    else if (ViewBag.Category == "Primary")
+                    {
+                        <p style="text-align:center;color:black;font-size:15px"><b>PRIMARY SCHOOL CONTINUOUS ASSESSMENT  REPORT</b></p>
+                    }
+                    else if (ViewBag.Category == "Junior")
+                    {
+                        <p style="text-align:center;color:black;font-size:15px"><b>JUNIOR SECONDARY SCHOOL CONTINUOUS ASSESSMENT  REPORT</b></p>
+                    }
+                    else if (ViewBag.Category == "Senior")
+                    {
+                        <p style="text-align:center;color:black;font-size:15px"><b> SENIOR SECONDARY SCHOOL CONTINUOUS ASSESSMENT  REPORT</b></p>
+                    }
+                </div>
+                <div style="width:100px;float:left">
+                    @if (ViewBag.Passport != null)
+                    {
+
+                        <img src="data:image;base64,@System.Convert.ToBase64String( ViewBag.Passport)" width="90" height="90" class="img-thumbnail" />
+
+                    }
+                    else
+                    {
+                        <img src="#" width="90" height="90" class="img-thumbnail" />
+                    }
+
+                </div>
+            </div>
+
+
+
+            @* Result Sheet for student and Pupil in Secondary and Primary School *@
+            @if (ViewBag.Category == "Senior" || ViewBag.Category == "Junior" || ViewBag.Category == "Primary")
+            {
+
+
+
+                <table class="table-striped table table-bordered table-condensed table-responsive">
+                    <tr>
+                        <td>Surname: &emsp;@ViewBag.Surname</td>
+                        <td>Other Name: &emsp; @ViewBag.OtherName</td>
+                        <td>Admission N0:&emsp;@ViewBag.AdmissionNo</td>
+                        <td>Class:&emsp;@ViewBag.Class</td>
+                    </tr>
+                    <tr>
+                        <td>Academic Year:&emsp;@ViewBag.AcademicYear</td>
+                        <td>Term:&emsp;@ViewBag.Term</td>
+                        <td>Term Ends:&emsp; @ViewBag.EndTerm</td>
+                        <td>Term Begins:&emsp; @ViewBag.NextTerm</td>
+                    </tr>
+                    <tr>
+                        <td>Next Term Fees:&emsp;NGN  @ViewBag.FeesPaid</td>
+                        <td>Fees Owed:&emsp;NGN @ViewBag.FeesOwed</td>
+                        <td>No. in Class :&emsp;  @ViewBag.Tclass</td>
+                        <td></td>
+                    </tr>
+                </table>
+
+                <br />
+                <p style="text-align:justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:15px"><b>Academic Records</b></p>
+
+                <table class="table-striped table table-bordered table-condensed table-responsive">
+                    <tr>
+                        <th></th>
+                        <th style="width:50px">
+                            <strong> Cognititve</strong>
+                        </th>
+                        <th style="width:40px">
+                            <strong>Affective</strong>
+                        </th>
+                        <th style="width:57px">
+                            <strong>Psychomoto</strong>
+                        </th>
+                        <th style="width:25px">
+                            <strong>Exam</strong>
+                        </th>
+                        <th style="width:25px">
+                            <strong>Total</strong>
+                        </th>
+                        <th style="width:45px">
+                            <strong>Average</strong>
+                        </th>
+                        <th style="width:45px">
+                            <strong>Highest</strong>
+                        </th>
+                        <th style="width:45px">
+                            <strong>Lowest</strong>
+                        </th>
+                        <th style="width:40px">
+                            <strong>Grade</strong>
+                        </th>
+                        <th style="width:100px;text-align:left">
+                            <strong>Remark</strong>
+                        </th>
+
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><b> Subjects</b></td>
+                        <td><b> 40%</b></td>
+                        <td><b> 10%</b></td>
+                        <td><b> 10%</b></td>
+                        <td><b> 40%</b></td>
+                        <td><b> 100%</b></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    @foreach (var item in Model)
+                {
+                        <tr>
+
+                            <td style="text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+                                @Html.DisplayFor(modelItem => item.Subject)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FirstCA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SecondCA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Psychomoto)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Exam)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Total)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AVERAGE)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HIGHEST)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LOWEST)
+                            </td>
+                            @if (item.GRADE == "F")
+                    {
+                                <td style="color:red">
+                                    @Html.DisplayFor(modelItem => item.GRADE)
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GRADE)
+                                </td>
+                            }
+                            @if (item.REMARK == "FAIL")
+                    {
+                                <td style="color:red">
+                                    @Html.DisplayFor(modelItem => item.REMARK)
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.REMARK)
+                                </td>
+                            }
+
+                        </tr>
+                    }
+
+                </table>
+
+                <br />
+                <p style="text-align:justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:15px"><b>Term Result Summary</b></p>
+                <table class="table-striped table table-bordered table-condensed table-responsive">
+                    <tr>
+                        <th>Total Cognitive</th>
+                        <th>Total Affective</th>
+                        <th>Total Psycomoto</th>
+                        <th>Total Exam</th>
+                        <th>Total Score</th>
+                        <th>Score Obtainable</th>
+                        <th>Overall Grade</th>
+                        <th>OverAll Rating</th>
+
+                    </tr>
+                    <tr>
+                        <td>@ViewBag.TotalCognitive</td>
+                        <td>@ViewBag.TotalAffective</td>
+                        <td>@ViewBag.TotalPsychomoto</td>
+                        <td>@ViewBag.TotalExam</td>
+                        <td>@ViewBag.TotalScore</td>
+                        <td>@ViewBag.ObtainableScore</td>
+
+
+                        @if (@ViewBag.TotalExam > 0)
+                        {
+
+                            if (ViewBag.OverAllGrades == "F")
+                            {
+                                <td style="color:red">@ViewBag.OverAllGrades</td>
+                            }
+                            else
+                            {
+                                <td>@ViewBag.OverAllGrades</td>
+                            }
+
+                            if (ViewBag.OverallRating == "FAIL")
+                            {
+                                <td style="color:red">@ViewBag.OverallRating</td>
+                            }
+                            else
+                            {
+                                <td>@ViewBag.OverallRating</td>
+                            }
+                        }
+                        else
+                        {
+                            <td></td>
+                            <td></td>
+                        }
+                </table>
+
+
+                @*@if (ViewBag.Term == "THIRD")
+                        {
+                        <p style="text-align:justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:15px"><b>Cumulative Scores</b></p>
+                            <table class="table-striped table table-bordered table-condensed table-responsive">
+                                <tr>
+                                    <th>First Term</th>
+                                    <th>Second Term</th>
+                                    <th>Third Term</th>
+                                    <th>C. AVERAGE</th>
+                                    <th>OverAll Grade</th>
+                                    <th>OverAll Rating</th>
+                                    <th>Statue</th>
+                                </tr>
+                                <tr>
+                                    <td>@ViewBag.FirstTerm</td>
+                                    <td>@ViewBag.SecondTerm</td>
+                                    <td>@ViewBag.ThirdTerm</td>
+                                    <td>@ViewBag.CAverage</td>
+
+
+                                    @if (ViewBag.OverallGrade == "F")
+                                    {
+                                        <td style="color:red">@ViewBag.OverallGrade</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@ViewBag.OverallGrade</td>
+                                    }
+
+                                    @if (ViewBag.OverallRating == "FAIL")
+                                    {
+                                        <td style="color:red">@ViewBag.OverallRating</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@ViewBag.OverallRating</td>
+                                    }
+                                    <td> @ViewBag.Statues</td>
+                            </table>
+                    }*@
+
+                <table class="table">
+                    <tbody>
+
+                        @if (ViewBag.TotalExam > 0)
+                        {
+                            if (ViewBag.OverAllGrades == "A")
+                            {
+                                <tr>
+                                    <td><b>Form Teacher <input type="text" name="N311principal_remarks" value="Excellent Performance keep it up." style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Excellent Performance keep it up, with More Hard Work" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+                            }
+                            else if (ViewBag.OverAllGrades == "B")
+                            {
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="Very Good result, Keep it Up" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Very Good result" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+                            }
+                            else if (ViewBag.OverAllGrades == "C")
+                            {
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Good result" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Good result" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+                            }
+                            else if (ViewBag.OverAllGrades == "D")
+                            {
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="Fair Result, Pls Study Harder" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Fair Result,You can do better" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+                            }
+                            else if (ViewBag.OverAllGrades == "E")
+                            {
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="Fair Performance, Pls work Harder" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Fair Performance" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+                            }
+                            else if (ViewBag.OverAllGrades == "F")
+                            {
+
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="Poor Performance, you can do much better." style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Poor Performance, Study Harder" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+                            }
+
+                        }
+                        else
+                        {
+                            <tr height="51">
+                                <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                    <b>
+                                        Sign / Stamp: <b>
+                                        </b>
+                                    </b>
+                                </td>
+                            </tr>
+
+                            <tr height="51">
+                                <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                    <b>
+                                        Sign / Stamp: <b>
+                                        </b>
+                                    </b>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+
+
+            }
+            @*Report Sheet For Nursery and Pre-Nursery*@
+            else if (ViewBag.Category == "Nursery" || ViewBag.Category == "Pre-Nursery")
+            {
+                <div>
+
+                    <table class="table table-bordered table-condensed table-responsive table-striped">
+                        <tr>
+                            <td><p><b>Surname: &emsp;@ViewBag.Surname</b></p></td>
+                            <td><p><b>Other Name: &emsp; @ViewBag.OtherName</b></p></td>
+                            <td><b>Admission N0:&emsp;@ViewBag.AdmissionNo</b></td>
+                            <td><b>Class:&emsp;@ViewBag.Class</b></td>
+                        </tr>
+                        <tr>
+                            <td><b>Academic Year:&emsp;@ViewBag.AcademicYear</b></td>
+                            <td><b>Term:&emsp;@ViewBag.Term</b></td>
+                            <td><p><b>Term Ending:&emsp; @ViewBag.EndTerm</b></p></td>
+                            <td><p><b>Term Begin:&emsp; @ViewBag.NextTerm</b></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><b>Next Term Fee :&emsp;NGN  @ViewBag.FeesPaid</b></p></td>
+                            <td><p><b>Fee Owed:&emsp;NGN @ViewBag.FeesOwed</b></p></td>
+                            <td><p><b>No. in Class :&emsp;  @ViewBag.Tclass</b></p></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <br />
+                    <p style="text-align:justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:15px"><b>Academic Records</b></p>
+
+                    <table class="table table-bordered table-condensed table-responsive table-striped">
+                        <tr>
+                            <td style="width:250px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Subjects</td>
+                            <th>
+                                <strong>Mark Obtainable</strong>
+                            </th>
+                            <th>
+                                <strong>Mark Obtained</strong>
+                            </th>
+                            <th>
+                                <strong>Class Average</strong>
+                            </th>
+                            @*<th >
+                                    <strong>Position</strong>
+                                </th>*@
+                            <th>
+                                <strong>Grade</strong>
+                            </th>
+                            <th>
+                                <strong>Remark</strong>
+                            </th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+
+
+                            <tr>
+
+                                <td style="width:200px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+                                    @Html.DisplayFor(modelItem => item.Subject)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ObtainableScore)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Exam)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AVERAGE)
+                                </td>
+                                @if (item.GRADE == "F")
+                                {
+                                    <td style="color:red">
+                                        @Html.DisplayFor(modelItem => item.GRADE)
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GRADE)
+                                    </td>
+                                }
+                                @if (item.REMARK == "FAIL")
+                                {
+                                    <td style="color:red">
+                                        @Html.DisplayFor(modelItem => item.REMARK)
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.REMARK)
+                                    </td>
+                                }
+
+                            </tr>
+
+                        }
+                    </table>
+                    <br />
+                    <p style="text-align:justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:15px"><b>Term Result Summary</b></p>
+                    <table class="table table-bordered table-condensed table-responsive table-striped">
+                        <tr>
+                            <th>Total Obtainable Score</th>
+                            <th>Total Score Obtained</th>
+                            <th>Overall Grade</th>
+                            <th>OverAll Rating</th>
+
+                        </tr>
+                        <tr>
+                            <td>@ViewBag.Tobtainable</td>
+                            <td>@ViewBag.Tobtained</td>
+                            <td>@ViewBag.OverAllGrades</td>
+                            <td>@ViewBag.OverallRating</td>
+
+                    </table>
+
+                    @*@if (ViewBag.Term == "THIRD")
+                        {
+                            <p style="text-align:justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:15px"><b>Cumulative Scores</b></p>
+                            <table class="table table-bordered table-condensed table-responsive table-striped">
+                                <tr>
+                                    <th>First Term</th>
+                                    <th>Second Term</th>
+                                    <th>Third Term</th>
+                                    <th>C. AVERAGE</th>
+                                    <th>OverAll Grade</th>
+                                    <th>OverAll Rating</th>
+                                    <th>Statue</th>
+                                </tr>
+                                <tr>
+                                    <td>@ViewBag.FirstTerm</td>
+                                    <td>@ViewBag.SecondTerm</td>
+                                    <td>@ViewBag.ThirdTerm</td>
+                                    <td>@ViewBag.CAverage</td>
+
+                                    @if (ViewBag.OverallGrade == "F")
+                                    {
+                                        <td style="color:red">@ViewBag.OverallGrade</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@ViewBag.OverallGrade</td>
+                                    }
+
+                                    @if (ViewBag.OverallRating == "FAIL")
+                                    {
+                                        <td style="color:red">@ViewBag.OverallRating</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@ViewBag.OverallRating</td>
+                                    }
+                                    <td> @ViewBag.Statues</td>
+                            </table>
+                        }*@
+
+                </div>
+
+                <table class="table table-bordered table-condensed table-responsive table-striped">
+                    <tbody>
+                        @if (ViewBag.OverAllGrades == "A")
+                        {
+                            <tr height="51">
+                                <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher <input type="text" name="N311principal_remarks" value="Excellent Performance keep it up." style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                    <b>
+                                        Sign / Stamp: <b>
+                                        </b>
+                                    </b>
+                                </td>
+                            </tr>
+
+                            <tr height="51">
+                                <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Excellent Performance keep it up, with More Hard Work" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                    <b>
+                                        Sign / Stamp: <b>
+                                        </b>
+                                    </b>
+                                </td>
+                            </tr>
+                        }
+                        else if (ViewBag.OverAllGrades == "B")
+                        {
+                            <tr height="51">
+                                <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="Very Good result, Keep it Up" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                    <b>
+                                        Sign / Stamp: <b>
+                                        </b>
+                                    </b>
+                                </td>
+                            </tr>
+
+                            <tr height="51">
+                                <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Very Good result" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                    <b>
+                                        Sign / Stamp: <b>
+                                        </b>
+                                    </b>
+                                </td>
+                            </tr>
+                        }
+                        else if (ViewBag.OverAllGrades == "C")
+                        {
+                            <tr height="51">
+                                <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Good result" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                    <b>
+                                        Sign / Stamp: <b>
+                                        </b>
+                                    </b>
+                                </td>
+                            </tr>
+
+                            <tr height="51">
+                                <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Good result" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                    <b>
+                                        Sign / Stamp: <b>
+                                        </b>
+                                    </b>
+                                </td>
+                            </tr>
+                        }
+                        else if (ViewBag.OverAllGrades == "D")
+                        {
+                            <tr height="51">
+                                <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="Fair Result, Pls Study Harder" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                    <b>
+                                        Sign / Stamp: <b>
+                                        </b>
+                                    </b>
+                                </td>
+                            </tr>
+
+                            <tr height="51">
+                                <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Fair Result,You can do better" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                    <b>
+                                        Sign / Stamp: <b>
+                                        </b>
+                                    </b>
+                                </td>
+                            </tr>
+                        }
+                        else if (ViewBag.OverAllGrades == "E")
+                        {
+                            <tr height="51">
+                                <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="Fair Performance, Pls work Harder" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                    <b>
+                                        Sign / Stamp: <b>
+                                        </b>
+                                    </b>
+                                </td>
+                            </tr>
+
+                            <tr height="51">
+                                <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Fair Performance" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                    <b>
+                                        Sign / Stamp: <b>
+                                        </b>
+                                    </b>
+                                </td>
+                            </tr>
+                        }
+                        else if (ViewBag.OverAllGrades == "F")
+                        {
+
+                            <tr height="51">
+                                <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="Poor Performance, you can do much better." style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                    <b>
+                                        Sign / Stamp: <b>
+                                        </b>
+                                    </b>
+                                </td>
+                            </tr>
+
+                            <tr height="51">
+                                <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Poor Performance, Study Harder" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                    <b>
+                                        Sign / Stamp: <b>
+                                        </b>
+                                    </b>
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+
+                            <tr height="51">
+                                <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                    <b>
+                                        Sign / Stamp: <b>
+                                        </b>
+                                    </b>
+                                </td>
+                            </tr>
+
+                            <tr height="51">
+                                <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                    <b>
+                                        Sign / Stamp: <b>
+                                        </b>
+                                    </b>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+
+            }
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

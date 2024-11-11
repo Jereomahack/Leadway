@@ -1,0 +1,80 @@
+﻿@model LightWay.Models.Expenditure
+
+@{
+                /**/
+
+                ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm("Create", "Expenditures", FormMethod.Post, new { @class = "genty form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExpenditureType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.DropDownList("ExpenditureType", ViewBag.ExpenditureType as SelectList, "Select Expenditure Type", new { @class = "exptype form-control" })
+                @Html.ValidationMessageFor(model => model.Purpose, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.AmountRequested, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.AmountRequested, new { htmlAttributes = new { @class = "amtreq form-control" } })
+                @Html.ValidationMessageFor(model => model.AmountRequested, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.AmountReleased, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.AmountReleased, new { htmlAttributes = new { @class = "amtrel form-control" } })
+                @Html.ValidationMessageFor(model => model.AmountReleased, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Purpose, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.TextArea("Purpose", ViewBag.dggfgdg as string, new { @class = "purpose form-control" })
+                @Html.ValidationMessageFor(model => model.Purpose, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.RequestedBy, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.RequestedBy, new { htmlAttributes = new { @class = "datereq form-control" } })
+                @Html.ValidationMessageFor(model => model.RequestedBy, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateRequested, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.DateRequested, new { htmlAttributes = new { @class = "datereq form-control" } })
+                @Html.ValidationMessageFor(model => model.DateRequested, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+
+<script type="text/javascript">
+    $('.genty').submit(function (e) {
+        e.preventDefault();
+        var $form = $(this);
+        $.post($form.attr("action"), $form.serialize()).done(function (res) {
+            $('.exptype').val('');
+            $('.amtreq').val('');
+            $('.amtrel').val('');
+            $('.purpose').val('');
+            $('.datereq').val('');
+            alert(res.message);
+        });
+    });
+</script>

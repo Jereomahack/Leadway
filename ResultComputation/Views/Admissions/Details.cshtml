@@ -1,0 +1,290 @@
+﻿@model LightWay.Models.Admission
+
+<div style="width:1145px">
+    <div style="width:100px;float:left">
+        @*<img src="~/Content/images/Schlogo.png" width="100" height="100" />*@
+        @if (ViewBag.Logo != null)
+        {
+
+            <img src="data:image;base64,@System.Convert.ToBase64String( ViewBag.Logo)" width="100" height="100" @*class="img-thumbnail"*@ />
+
+        }
+    </div>
+
+    <div style="width:100px; height:100px; float:right">
+        @if (ViewBag.Passport != null)
+            {
+
+            <img src="data:image;base64,@System.Convert.ToBase64String( ViewBag.Passport)" width="200" height="150" class="img-thumbnail" />
+
+        }
+        else
+        {
+            <img src="#" width="100" height="90" class="img-thumbnail" />
+        }
+
+    </div>
+
+    <div style="width:950px;" align="center">
+        <p style="text-align:center;color:red;font-size:40px;font-family:Arial, Helvetica, sans-serif"><b>@ViewBag.School</b></p>
+        <p style="text-align:center;color:blue;font-size:20px;font-family:Courier New, Courier, monospace" class="textcolor"><b>*CRECH* *PRE-NURSERY* *NURSERY* *PRIMARY* *SECONDARY*</b>
+        <p style="text-align:center;color:black;font-size:15px;font-family:'Times New Roman'">
+            <b>@ViewBag.Address</b>
+        </p>
+        <p>@ViewBag.Others</p>
+        <p style="text-align:center;color:red;font-size:30px;font-family:Arial, Helvetica, sans-serif"><b>APPLICATION/ADMISSION FORM</b></p>
+        <div style="font-size:small; float:right">
+            <b>FORM NO:</b>  @Html.DisplayFor(model => model.FormNo)
+        </div>
+
+    </div>
+</div>
+<br />
+<br />
+
+<div class="panel panel-primary fix-bottom">
+    <div class="panel-heading text-success"><b>SECTION A: PUPIL</b></div>
+    <div class="panel-body">
+        <table class="table table-bordered">
+
+
+            <tr>
+                <th>
+                    <font color="red">
+                        @Html.DisplayNameFor(model => model.Surname):
+                    </font>
+
+                    @Html.DisplayFor(model => model.Surname)
+                </th>
+
+                <th>
+                    <font color="red">
+                        @Html.DisplayNameFor(model => model.Firstname):
+                    </font>
+                    @Html.DisplayFor(model => model.Firstname)
+                </th>
+
+
+
+                <th>
+                    <font color="red">
+                        @Html.DisplayNameFor(model => model.Middlename):
+                    </font>
+                    @Html.DisplayFor(model => model.Middlename)
+                </th>
+
+                <th>
+                    <font color="red">
+                        @Html.DisplayNameFor(model => model.Gender):
+                    </font>
+                    @Html.DisplayFor(model => model.Gender)
+                </th>
+            </tr>
+
+
+            <tr>
+                <th>
+                    <font color="red">
+                        @Html.DisplayNameFor(model => model.DateTime):
+                    </font>
+                    @Html.DisplayFor(model => model.DateTime)
+                </th>
+                <th>
+                    <font color="red">
+                        @Html.DisplayNameFor(model => model.Nationality):
+                    </font>
+                    @Html.DisplayFor(model => model.Nationality)
+                </th>
+                <th>
+                    <font color="red">
+                        @Html.DisplayNameFor(model => model.StateOfOrigin):
+                    </font>
+                    @Html.DisplayFor(model => model.StateOfOrigin)
+                </th>
+                <th>
+                    <font color="red">
+                        @Html.DisplayNameFor(model => model.Lga):
+                    </font>
+                    @Html.DisplayFor(model => model.Lga)
+                </th>
+
+            </tr>
+
+
+            <tr>
+
+                <th>
+                    <font color="red">
+                        @Html.DisplayNameFor(model => model.Allergic):
+                    </font>
+                    @Html.DisplayFor(model => model.Allergic)
+                </th>
+                <th>
+                    <font color="red">
+                        @Html.DisplayNameFor(model => model.Religion):
+                    </font>
+
+                    @Html.DisplayFor(model => model.Religion)
+                </th>
+
+                <th>
+                    <font color="red">
+                        @Html.DisplayNameFor(model => model.Language):
+                    </font>
+
+                    @Html.DisplayFor(model => model.Language)
+                </th>
+
+                <th>
+                    <font color="red">
+                        @Html.DisplayNameFor(model => model.Psa):
+                    </font>
+                    @Html.DisplayFor(model => model.Psa)
+                </th>
+            </tr>
+
+
+        </table>
+    </div>
+</div>
+
+<br />
+
+<div class="panel panel-primary fix-bottom">
+
+    <div class="panel-heading text-success"><b>SECTION B: DETAILS OF PARENTS/GAURDIAN(S)</b></div>
+    <div class="panel-body">
+
+        <table class="table  table-bordered">
+            <tr>
+                <td><b>@Html.DisplayNameFor(model => model.Ftitle)</b> </td>
+                <td>
+                    @Html.DisplayFor(model => model.Ftitle)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>@Html.DisplayNameFor(model => model.FsurnName)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.FsurnName)
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <b>@Html.DisplayNameFor(model => model.Frelationships)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Frelationships)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>@Html.DisplayNameFor(model => model.Faddress)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Faddress)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>@Html.DisplayNameFor(model => model.Fgsmnumber)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Fgsmnumber)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>@Html.DisplayNameFor(model => model.FemailAddress)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.FemailAddress)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>@Html.DisplayNameFor(model => model.Foccupation)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Foccupation)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>@Html.DisplayNameFor(model => model.Femployer)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Femployer)
+                </td>
+            </tr>
+
+
+
+        </table>
+
+
+
+    </div>
+</div>
+
+
+<th>
+    <tr>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; HOW DO YOU LEARN ABOUT THE SCHOOL:</tr>
+    <font color="red">
+        @Html.DisplayFor(model => model.Discovery)
+    </font>
+    <tr>
+        <input type="checkbox" style="width:30px;height:15px; outline-style:none" /> Friend
+    </tr>
+    <tr><input type="checkbox" style="width:30px;height:15px; outline-style:none" />Newspaper</tr>
+    <tr><input type="checkbox" style="width:30px;height:15px; outline-style:none" /> Handbill</tr>
+    <tr><input type="checkbox" style="width:30px;height:15px; outline-style:none" />Internet</tr>
+    <tr><input type="checkbox" style="width:30px;height:15px; outline-style:none" />Signpost</tr>
+    <tr><input type="checkbox" style="width:30px;height:15px; outline-style:none" />Television</tr>
+    <tr><input type="checkbox" style="width:30px;height:15px; outline-style:none" />School Calender</tr>
+
+
+</th>
+<br />
+<br />
+
+
+
+<div align="center">
+    <font color="red">Requirement:</font> following should be submitted together with the complete form to the school,Photocopy of birth certificate, Photocopy of last school report(if any),
+    immunization record card, Two passport-sized photographs(name written behind) and medical report.
+</div>
+
+<br />
+<input type="submit" value="PRINT" class="printd btn btn-danger hidden-print" />
+
+
+@section Scripts{
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $(".printd").click(function () {
+                window.print();
+            });
+        });
+
+
+
+</script>
+    }
+
+
+
+
+
+

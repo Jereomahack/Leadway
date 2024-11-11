@@ -1,0 +1,521 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>@ViewBag.School</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+    <link href="~/Jquerry/juerry_ui.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/css/sb-admin.css" rel="stylesheet">
+    <!-- Morris Charts CSS -->
+    <link href="~/css/plugins/morris.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="~/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap Docs -->
+    <link href="http://getbootstrap.com/docs-assets/css/docs.css" rel="stylesheet" media="screen">
+
+
+    <!-- Bootstrap Admin Theme -->
+    <link rel="stylesheet" media="screen" href="~/Content/css/bootstrap-admin-theme.css">
+    <link rel="stylesheet" media="screen" href="~/Content/css/bootstrap-admin-theme-change-size.css">
+    <!-- Vendors -->
+    <link rel="stylesheet" media="screen" href="~/Content/vendors/easypiechart/jquery.easy-pie-chart.css">
+    <link rel="stylesheet" media="screen" href="~/Content/vendors/easypiechart/jquery.easy-pie-chart_custom.css">
+
+    <!-- Custom styles -->
+    <style type="text/css">
+        font-face {
+            font-family: Ubuntu;
+            src: url('fonts/Ubuntu-Regular.ttf');
+        }
+
+        .bs-docs-masthead {
+            background-color: #6f5499;
+            background-image: linear-gradient(to bottom, #563d7c 0px, #6f5499 100%);
+            background-repeat: repeat-x;
+        }
+
+        .bs-docs-masthead {
+            padding: 0;
+        }
+
+            .bs-docs-masthead h1 {
+                color: #fff;
+                font-size: 40px;
+                margin: 0;
+                padding: 34px 0;
+                text-align: center;
+            }
+
+            .bs-docs-masthead a:hover {
+                text-decoration: none;
+            }
+
+        .meritoo-logo a {
+            background-color: #fff;
+            border: 1px solid rgba(66, 139, 202, 0.4);
+            display: block;
+            font-family: Ubuntu;
+            padding: 22px 0;
+            text-align: center;
+        }
+
+            .meritoo-logo a,
+            .meritoo-logo a:hover,
+            .meritoo-logo a:focus {
+                text-decoration: none;
+            }
+
+                .meritoo-logo a img {
+                    display: block;
+                    margin: 0 auto;
+                }
+
+                .meritoo-logo a span {
+                    color: #4e4b4b;
+                    font-size: 18px;
+                }
+
+        .row-urls {
+            margin-top: 4px;
+        }
+
+            .row-urls .col-md-6 {
+                text-align: center;
+            }
+
+                .row-urls .col-md-6 a {
+                    font-size: 14px;
+                }
+    </style>
+
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+
+        <nav class="navbar navbar-inverse navbar-fixed-top hidden-print" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="~/Home/DashBoard">@ViewBag.School</a>
+            </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <!-- Top Menu Items -->
+                <ul class="nav navbar-right top-nav">
+                    @if (User.IsInRole("Admin"))
+                    {
+
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i><span style="font-size:18px;color:blue"> Student</span> <i class="caret"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/Students/IndexAdmin" style="color:#c3240a;font-size:14px">Student Index</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/Students/IndexAdmission" style="color:#c3240a;font-size:14px">Admission List</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/scores/IndexAll" style="color:#c3240a;font-size:14px">Print Result</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/scores/IndexDelete" style="color:#c3240a;font-size:14px">Delete Scores</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/StudentOldNumbers/Index" style="color:#c3240a;font-size:14px">Old Admission Numbers</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/scores/IndexSearchByClassandSubject" style="color:#c3240a;font-size:14px">Check Score Records</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i><span style="font-size:18px;color:blue"> Staff</span> <i class="caret"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/Teachers/Create" style="color:#c3240a;font-size:14px">Register Staff</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/Teachers/Index" style="color:#c3240a;font-size:14px">Assign Subject</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/Teachers/Index" style="color:#c3240a;font-size:14px">View Teacher</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/HODs/Index" style="color:#c3240a;font-size:16px">list of HOD</a></li>
+                                @*<li><a href="index.html">Logout</a></li>*@
+                            </ul>
+
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i><span style="font-size:18px;color:blue"> Roles</span> <i class="caret"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/Roles/ManageUserRoles" style="color:#c3240a;font-size:14px">Assign Role</a></li>
+                                @*<li><a href="#">Manage Roles</a></li>*@
+                            </ul>
+
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-road"></i><span style="font-size:18px;color:blue"> Transportation</span> <i class="caret"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/Routes/Index" style="color:#c3240a;font-size:14px">Routes</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/Transports/Index" style="color:#c3240a;font-size:14px">Drivers</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/TransportMembers/Index" style="color:#c3240a;font-size:14px">Members</a></li>
+                            </ul>
+
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-home"></i><span style="font-size:18px;color:blue"> Hostel</span> <i class="caret"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/Hostels/Index" style="color:#c3240a;font-size:14px">Hostel</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/HostelMembers/Index" style="color:#c3240a;font-size:14px">Hostel Member</a></li>
+                            </ul>
+                        </li>
+                    }
+                    else if (User.IsInRole("Accountant"))
+                    {
+                        @*<li>
+                                <a href="~/Emailings/Index"><span class="badge pull-right">@ViewBag.Notification</span><span style="font-size:18px;color:red">Notifications</span><i class="glyphicon glyphicon-bell"></i></a>
+                            </li>*@
+
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-road"></i><span style="font-size:18px;color:blue"> Transportation</span> <i class="caret"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/Routes/Index" style="color:#c3240a;font-size:20px">Routes</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/Transports/Index" style="color:#c3240a;font-size:20px">Drivers</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/students/IndexAdmin" style="color:#c3240a;font-size:20px">Create Members</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/TransportMembers/Index" style="color:#c3240a;font-size:20px"> Members index</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-home"></i><span style="font-size:18px;color:blue"> Hostel</span> <i class="caret"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/Hostels/Index" style="color:#c3240a;font-size:20px">Hostel</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/Students/IndexAdmin" style="color:#c3240a;font-size:20px"> Create Member</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/HostelMembers/Index" style="color:#c3240a;font-size:20px">Hostel Member</a></li>
+                            </ul>
+
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-picture"></i><span style="font-size:18px;color:blue"> Staff Payroll</span> <i class="caret"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/Teachers/Index" style="color:#c3240a;font-size:20px">Create Salary</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/StaffPayrolls/IndexAll" style="color:#c3240a;font-size:20px">Payroll Index</a></li>
+                            </ul>
+
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-record"></i><span style="font-size:18px;color:blue">Invoice</span> <i class="caret"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/Students/IndexAdmin" style="color:#c3240a;font-size:20px">Create Invoice</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/Payments/Index" style="color:#c3240a;font-size:20px">Payment History</a></li>
+                            </ul>
+
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-send"></i><span style="font-size:18px;color:blue">Inventory</span> <i class="caret"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/Inventories/Create" style="color:#c3240a;font-size:20px">Create Inventory</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/Inventories/index" style="color:#c3240a;font-size:20px">Inventory Index</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/Products/Index" style="color:#c3240a;font-size:20px">Products</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/Vendors/Index" style="color:#c3240a;font-size:20px">Vendor</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/Departments/Index" style="color:#c3240a;font-size:20px">Departments</a></li>
+                            </ul>
+
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-cloud-upload"></i><span style="font-size:18px;color:blue">Distribution</span> <i class="caret"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/Distributions/Create" style="color:#c3240a;font-size:20px"> Create Distribution</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/Distributions/Index" style="color:#c3240a;font-size:20px"> Distribution Index</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="~/Stores/index" style="color:#c3240a;font-size:20px">Store</a></li>
+                            </ul>
+                        </li>
+                    }
+                    @Html.Partial("_LoginPartial")
+
+                </ul>
+                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav side-nav">
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <a href="~/Home/DashBoard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="~/ClassLists/IndexAdmin"><i class="fa fa-fw fa-institution"></i> Classes and form Masters</a>
+                            </li>
+                            <li>
+                                <a href="~/Grades/Index"><i class="fa fa-fw fa-bar-chart"></i> Grades</a>
+                            </li>
+                            <li>
+                                <a href="~/Sessions/Index"><i class="fa fa-fw fa-times-circle"></i> Create Session</a>
+                            </li>
+
+                            <li>
+                                <a href="~/SchoolSubjects/Index"><i class="fa fa-fw fa-book"></i> Subjects</a>
+                            </li>
+                            <li>
+                                <a href="~/StaffPayrolls/IndexAll"><i class="fa fa-fw fa-money"></i> Staff Payroll</a>
+                            </li>
+                            <li>
+                                <a href="~/TeacherSubjects/Index"><i class="fa fa-fw fa-user"></i> Teacher Subject</a>
+                            </li>
+                            <li>
+                                <a href="~/SchoolLogoes/Index"><i class="fa fa-fw fa-code"></i>School Logo</a>
+                            </li>
+                            <li>
+                                <a href="~/GlobalSettings/Index"><i class="fa fa-fw fa-bell-slash"></i> Settings</a>
+                            </li>
+
+
+                        }
+                        else if (User.IsInRole("Teacher") && User.IsInRole("Form Master"))
+                        {
+                            <li>
+                                <a href="~/Home/DashBoard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="~/ClassLists/Index"><i class="fa fa-fw fa-home"></i> Class</a>
+                            </li>
+                            <li>
+                                <a href="~/Grades/Index"><i class="fa fa-fw fa-bar-chart"></i> Grades</a>
+                            </li>
+
+                            <li>
+                                <a href="~/scores/IndexUpdate"><i class="fa fa-fw fa-edit"></i>Update Result</a>
+                            </li>
+                            <li>
+                                @*<a href="~/Students/Index"><i class="fa fa-fw fa-upload"></i>New Result</a>*@
+                                <a href="~/scores/Create"><i class="fa fa-fw fa-upload"></i>New Result</a>
+                            </li>
+                            <li>
+                                <a href="~/StaffPayrolls/Index"><i class="fa fa-fw fa-money"></i> Salary History</a>
+                            </li>
+                            <li>
+                                <a href="~/Emailings/Index"><i class="fa fa-fw fa-envelope"></i><span class="badge pull-right">@ViewBag.Notification</span>Notifications</a>
+                            </li>
+                            <li>
+                                <a href="~/SchoolSubjects/Index"><i class="fa fa-fw fa-book"></i>All Subjects</a>
+                            </li>
+                            <li>
+                                <a href="~/Teachers/Index"><i class="fa fa-fw fa-user"></i>Teacher</a>
+                            </li>
+                            <li>
+                                <a href="~/TeacherSubjects/SubTeacher"><i class="fa fa-fw fa-sort-alpha-desc"></i>Teacher Subjects</a>
+                            </li>
+                            <li>
+                                <a href="~/Students/TeacherStudent"><i class="fa fa-fw fa-users"></i>Students</a>
+
+                            </li>
+
+                            <li>
+                                <a href="~/scores/IndexFormMaster"><i class="fa fa-fw fa-print"></i>Print Result</a>
+                            </li>
+                            if (User.IsInRole("HOD"))
+                            {
+                                <li>
+                                    <a href="~/scores/IndexHod"><i class="glyphicon glyphicon-chevron-right"></i>HOD CHECK</a>
+                                </li>
+                            }
+                        }
+                        else if (User.IsInRole("Teacher"))
+                        {
+                            <li>
+                                <a href="~/Home/DashBoard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="~/ClassLists/Index"><i class="fa fa-fw fa-home"></i> Class</a>
+                            </li>
+                            <li>
+                                <a href="~/Grades/Index"><i class="fa fa-fw fa-area-chart"></i> Grades</a>
+                            </li>
+                            <li>
+                                <a href="~/scores/IndexUpdate"><i class="fa fa-fw fa-edit"></i>Update Result</a>
+                            </li>
+                            <li>
+                                @*<a href="~/Students/Index"><i class="fa fa-fw fa-upload"></i>New Result</a>*@
+                                <a href="~/Scores/Create"><i class="fa fa-fw fa-upload"></i>New Result</a>
+                            </li>
+                            <li>
+                                <a href="~/Emailings/Index"><i class="fa fa-fw fa-envelope"></i><span class="badge pull-right">@ViewBag.Notification</span>  Notifications</a>
+                            </li>
+                            <li>
+                                <a href="~/StaffPayrolls/Index"><i class="fa fa-fw fa-money"></i> Salary History</a>
+                            </li>
+                            <li>
+                                <a href="~/SchoolSubjects/Index"><i class="fa fa-fw fa-book"></i>All Subjects</a>
+                            </li>
+                            <li>
+                                <a href="~/Teachers/Index"><i class="fa fa-fw fa-user"></i>Teacher</a>
+                            </li>
+                            <li>
+                                <a href="~/TeacherSubjects/SubTeacher"><i class="fa fa-fw fa-h-square"></i>Teacher Subjects</a>
+                            </li>
+                            <li>
+                                <a href="~/Students/TeacherStudent"><i class="fa fa-fw fa-users"></i>Students</a>
+                            </li>
+                            if (User.IsInRole("HOD"))
+                            {
+                                <li>
+                                    <a href="~/scores/IndexHod">HOD CHECK</a>
+                                </li>
+                            }
+                        }
+
+
+                        else if (User.IsInRole("Accountant"))
+                        {
+                            <li>
+                                <a href="~/Home/DashBoard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="~/Fees/Index"><i class="fa fa-fw fa-money"></i> Online Transaction Report</a>
+                            </li>
+                            <li>
+                                <a href="~/PaymentCategories/Index"><i class="fa fa-fw fa-money"></i> Payment Items</a>
+                            </li>
+
+                            <li>
+                                <a href="~/ClassLists/IndexAdmin"><i class="fa fa-fw fa-home"></i> Class</a>
+                            </li>
+                            <li><a href="~/Students/IndexAdmin"><i class="fa fa-fw fa-users"></i> students </a></li>
+                            <li><a href="~/Expenditures/IndexpExp"><i class="fa fa-fw fa-exchange"></i> Expenditures </a></li>
+                            <li>
+                                <a href="~/SchoolSubjects/Index"><i class="fa fa-fw fa-book"></i> Subjects</a>
+                            </li>
+                            <li>
+                                <a href="~/Teachers/Index"><i class="fa fa-fw fa-users"></i>Teacher</a>
+                            </li>
+                            <li>
+                                <a href="~/StaffPayrolls/Index"><i class="fa fa-fw fa-money"></i> Salary History</a>
+                            </li>
+                            <li>
+                                <a href="~/Emailing/Index"><i class="fa fa-fw fa-envelope"></i><span class="badge pull-right">@ViewBag.Notification</span> Notifications</a>
+                            </li>
+                            <li>
+                                <a href="~/PaymentTypes/Index"><i class="fa fa-fw fa-upload"></i>Create Payment Type</a>
+                            </li>
+                        }
+                        else if (User.IsInRole("Principal"))
+                        {
+                            <li>
+                                <a href="~/Home/DashBoard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="~/Fees/Index"><i class="fa fa-fw fa-money"></i> Online Transaction Report</a>
+                            </li>
+                            <li>
+                                <a href="~/ClassLists/IndexAdmin"><i class="fa fa-fw fa-home"></i> Class</a>
+                            </li>
+                            <li>
+                                <a href="~/SchoolSubjects/Index"><i class="fa fa-fw fa-book"></i> Subjects</a>
+                            </li>
+                            <li>
+                                <a href="~/Students/Index"><i class="fa fa-fw fa-edit"></i>Update Result</a>
+                            </li>
+                            <li>
+                                @*<a href="~/Students/Index"><i class="fa fa-fw fa-upload"></i>New Result</a>*@
+                                <a href="~/Scores/Create"><i class="fa fa-fw fa-upload"></i>New Result</a>
+                            </li>
+                            <li>
+                                <a href="~/StaffPayrolls/IndexAll"><i class="fa fa-fw fa-money"></i> Staff Payroll</a>
+                            </li>
+                            <li>
+                                <a href="~/StaffPayrolls/Index"><i class="fa fa-fw fa-money"></i> Salary History</a>
+                            </li>
+                            <li>
+                                <a href="~/Teachers/Index"><i class="fa fa-fw fa-users"></i>Teacher</a>
+                            </li>
+                            <li>
+                                <a href="~/Emailings/Index"><i class="fa fa-fw fa-envelope"></i> <span class="badge pull-right">@ViewBag.Notification</span> Notifications</a>
+                            </li>
+                            <li><a href="~/Students/IndexAdmin"><i class="fa fa-fw fa-users"></i> students </a></li>
+                            <li><a href="~/Payments/Index"><i class="fa fa-fw fa-history"></i> Payments History </a></li>
+                            <li><a href="~/Expenditures/Index"><i class="fa fa-fw fa-exchange"></i> Expenditures </a></li>
+
+                        }
+                        else if (User.IsInRole("Parent"))
+                        {
+                            <li>
+                                <a href="~/scores/IndexParent"><i class="fa fa-fw fa-dashboard"></i>Check Result</a>
+                            </li>
+                            <li>
+                                <a href="~/scores/IndexPreviousResult"><i class="fa fa-fw fa-dashboard"></i>Previous Results</a>
+                            </li>
+                            @*<li>
+                                    <a href="~/Fees/Create"><i class="fa fa-fw fa-dashboard"></i> Make Payment</a>
+                                </li>*@
+                            <li>
+                                <a href="~/Fees/IndexParent"><i class="fa fa-fw fa-home"></i> Payments</a>
+                            </li>
+                            @*<li>
+                                <a href="#"><i class="fa fa-fw fa-home"></i>Contact Us</a>
+                            </li>*@
+
+                        }
+
+
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            }
+        </nav>
+
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <!-- Bootstrap Core JavaScript -->
+    @*<script src="~/Content/vendors/jquery-1.9.1.min.js"></script>
+        <script src="~/Content/vendors/jquery-ui-1.10.3.js"></script>*@
+    <script src="~/Jquerry/bootstrap.min.js"></script>
+
+
+    <!-- Morris Charts JavaScript -->
+    @*<script src="~/js/plugins/morris/raphael.min.js"></script>
+    <script src="~/js/plugins/morris/morris.min.js"></script>
+    <script src="~/js/plugins/morris/morris-data.js"></script>*@
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+
+
+    @*<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>*@
+    @*<script type="text/javascript" src="~/Content/js/bootstrap.min.js"></script>*@
+    <script type="text/javascript" src="~/Content/js/twitter-bootstrap-hover-dropdown.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/bootstrap-admin-theme-change-size.js"></script>
+    <script type="text/javascript" src="~/Content/vendors/easypiechart/jquery.easy-pie-chart.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

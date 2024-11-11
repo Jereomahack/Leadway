@@ -1,0 +1,71 @@
+﻿@*@model IEnumerable<ResultComputation.Models.SchoolSubjects>*@
+@model PagedList.IPagedList<LightWay.Models.SchoolSubjects>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">List of Subject</div>
+    <div class="panel-body">
+        @if (User.IsInRole("Admin"))
+        {
+            <p><a href="~/schoolsubjects/create" class="btn btn-warning">Add Subjects </a></p>
+        }
+        @using (Html.BeginForm("Index", "SchoolSubjects", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+
+
+            @*<h2><b><span style="color:darkseagreen;font-family:Calibri;font-size:large">Index for Student Registration</span></b></h2>*@
+            <p class="col-md-4 pull-right">
+                Seach by Subject Name (e.g CRK), @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+                <input type="submit" value="Search" class="btn btn-info" />
+            </p>
+                                <table class="table table-bordered table-condensed table-hover table-responsive">
+                                    <tr>
+                                        <th>
+                                            Subject Name
+                                        </th>
+                                    </tr>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Subject)
+                                            </td>
+                                            <td>
+                                                @if (User.IsInRole("Admin"))
+                                                {
+                                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </table>
+        }
+        <br />
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+        @Html.PagedListPager(Model, page => Url.Action("Index",
+                            new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

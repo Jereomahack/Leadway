@@ -1,0 +1,30 @@
+﻿@model IEnumerable<LightWay.Models.PaymentCategory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-condensed table-responsive table-striped">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+        <td>
+            @Html.ActionLink("Sub", "getsub", new { Cat=item.CategoryName})
+        </td>
+    </tr>
+}
+
+</table>

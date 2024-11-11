@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "ServiceUrl";
+}
+
+
+
+<div class="panel panel-default">
+    <div class="panel-heading"> Cash Payment Instruction</div>
+    <div class="panel-body">
+
+        <div style="text-align:center">
+            <h3 style="color:#00A65A"><b>OPTION ONE: BANK BRANCH DEPOSIT</b> </h3>
+            <p>
+                Walk into any Nigerian Bank and make payment using the following OSOFTPAY
+                REFERENCE Number on the OSOFT COLLECTIONS PayDirect platform
+            </p>
+            <p><b>OPR: @ViewBag.OPR</b> </p>
+            <p><b>Amount to Pay:NGN @ViewBag.Amount</b></p>
+            <p style="font-weight:bold">List of Banks:<span style="color:#00A65A">Diamond Bank</span>, <span style="color:#dd4b39">Eco Bank</span>, <span style="color:#3c8dbc">Fedelity Bank</span>, <span style="color:#00A65A">Guaranty Trust Bank</span>, <span style="color:#00A65A"></span><span style="color:#dd4b39">Keystone Bank</span><span style="color:#00A65A">, Stanbic IBTC Bank</span><span style="color:#3c8dbc">, Sterling Bank</span><span style="color:#dd4b39">, Union Bank Nigeria PLC </span><span style="color:#00A65A">, Unity Bank PLC</span><span style="color:#dd4b39">, UBA Bank </span></p>
+        </div>
+
+        <div style="text-align:center">
+
+            <h3 style="color:#dd4b39"><b>OPTION TWO: USSD</b> </h3>
+            <p>
+                Alternatively, you can make payment via USSD by dialing any of the
+                following code on you mobile phone
+            </p>
+            <p>
+                <b>
+                    *322*1*043399001*@ViewBag.Amount#
+                    <br />
+                    OR
+                    <br />
+                    *322*33990*@ViewBag.Amount#
+                </b>
+            </p>
+
+
+        </div>
+
+        @*<div style="text-align:center">
+                <h3 style="color:#3c8dbc"><b>OPTION THREE: QUICKTELLER</b></h3>
+                <p>
+                    Furthermore, you can <a href="http://www.quickteller.com/osoft" target="_blank"><b>click here</b></a>  to make payment on <a href="http://www.quickteller.com/osoft" target="_blank"><b>QuickTeller</b></a>  using the
+                    following OSOFTPAY REFERENCE Number and Amount
+                </p>
+
+                <p>
+                    <b>
+                        OPR: @ViewBag.OPR
+                        <br />
+                        Amount to Pay: @ViewBag.Amount
+                    </b>
+                </p>
+
+            </div>*@
+    </div>
+</div>

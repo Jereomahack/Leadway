@@ -1,0 +1,47 @@
+﻿@model IEnumerable<LightWay.Models.HOD>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Index HOD</div>
+    <div class="panel-body">
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table table-condensed table-responsive table-striped">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.StaffNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StaffNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-xs" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,87 @@
+﻿@model LightWay.Models.Payment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Payment Receipt</div>
+    <div class="panel-body">
+
+        <div>
+            <h4>Payment</h4>
+            <hr />
+
+            <div class="row">
+                <div class="col-md-6">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            Student No:&ensp;
+                            @Html.DisplayFor(model => model.StudentNum)
+                        </dt>
+                        <dt>
+                            Name:&ensp;
+                            @Html.DisplayFor(model => model.StudentName)
+                        </dt>
+
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Class):&ensp;
+                            @Html.DisplayFor(model => model.Class)
+                        </dt>
+
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Amount):&ensp;
+                            @Html.DisplayFor(model => model.Amount)
+                        </dt>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Balance):&ensp;
+                            @Html.DisplayFor(model => model.Balance)
+                        </dt>
+
+
+                    </dl>
+                </div>
+                <div class="col-md-6">
+                    <dl>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Term):&ensp;
+                            @Html.DisplayFor(model => model.Term)
+                        </dt>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DateRecorded):&ensp;
+                            @Html.DisplayFor(model => model.DateRecorded)
+                        </dt>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Session):&ensp;
+                            @Html.DisplayFor(model => model.Session)
+                        </dt>
+                        <dt>
+                            for:&ensp;
+                            @Html.DisplayFor(model => model.PaymentFor)
+                        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.EnteredBy):&ensp;
+                            @Html.DisplayFor(model => model.EnteredBy)
+                        </dt>
+                    </dl>
+                </div>
+
+            </div>
+
+        </div>
+        @*<p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>*@
+
+
+    </div>
+</div>
+
+

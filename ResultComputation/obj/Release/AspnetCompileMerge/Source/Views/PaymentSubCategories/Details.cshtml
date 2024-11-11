@@ -1,0 +1,31 @@
+﻿@model LightWay.Models.PaymentSubCategory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PaymentSubCategory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentCat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentCat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubCatName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubCatName)
+        </dd>
+
+    </dl>
+</div>
+

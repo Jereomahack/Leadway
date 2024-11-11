@@ -1,0 +1,116 @@
+﻿@model LightWay.Models.Student
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+@*<h2>Delete</h2>*@
+
+@*<h4><span style="color:crimson">Are you sure you want to delete this?</span></h4>*@
+
+
+<div class="panel panel-primary panel-group">
+    <div class="panel-heading">Student Detail</div>
+    <div class="panel-body container">
+        <div class="col-md-offset-4">
+            <dl>
+
+                @if (Model.Passport != null)
+                {
+                    <dd>
+                        <img src="data:image;base64,@System.Convert.ToBase64String(Model.Passport)" width="120" height="120" class="img-thumbnail" />
+                    </dd>
+                }
+                else
+                {
+                    <dd>
+                        <img src="#" width="120" height="120" class="img-thumbnail" />
+                    </dd>
+                }
+
+
+            </dl>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-6 ">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Class): &nbsp;
+                        @Html.DisplayFor(model => model.Class)
+
+                    </dt>
+
+                    <dt>
+                        Student No:&nbsp;
+                        @Html.DisplayFor(model => model.StudentNumber)
+                    </dt>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Surname):&nbsp;
+                        @Html.DisplayFor(model => model.Surname)
+                    </dt>
+
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.OtherName):&nbsp;
+                        @Html.DisplayFor(model => model.OtherName)
+                    </dt>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Gender):&nbsp;
+                        @Html.DisplayFor(model => model.Gender)
+                    </dt>
+
+
+                </dl>
+            </div>
+            <div classs="col-md-6">
+                <dl>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.GuardianName):&nbsp;
+                        @Html.DisplayFor(model => model.GuardianName)
+                    </dt>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.GuardianAddress): &nbsp;
+                        @Html.DisplayFor(model => model.GuardianAddress)
+                    </dt>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.EmailAddress):&nbsp;
+                        @Html.DisplayFor(model => model.EmailAddress)
+                    </dt>
+                    <dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DOB):&nbsp;
+                        @Html.DisplayFor(model => model.DOB)
+                    </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Category):&nbsp;
+                        @Html.DisplayFor(model => model.Category)
+                    </dt>
+
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+
+
+
+
+
+

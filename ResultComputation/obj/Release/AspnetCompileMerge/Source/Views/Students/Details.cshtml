@@ -1,0 +1,104 @@
+﻿@model LightWay.Models.Student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Student Detail</div>
+    <div class="panel-body container">
+        <div class="col-md-offset-4">
+            <dl>
+
+                @if (Model.Passport != null)
+                {
+                    <dd>
+                        <img src="data:image;base64,@System.Convert.ToBase64String(Model.Passport)" width="120" height="120" class="img-thumbnail" />
+                    </dd>
+                }
+                else
+                {
+                    <dd>
+                        <img src="#" width="120" height="120" class="img-thumbnail" />
+                    </dd>
+                }
+
+            </dl>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-6">
+                <dl>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Class): &nbsp;
+                        @Html.DisplayFor(model => model.Class)
+
+                    </dt>
+
+                    <dt>
+                        Student No:&nbsp;
+                        @Html.DisplayFor(model => model.StudentNumber)
+                    </dt>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Surname):&nbsp;
+                        @Html.DisplayFor(model => model.Surname)
+                    </dt>
+
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.OtherName):&nbsp;
+                        @Html.DisplayFor(model => model.OtherName)
+                    </dt>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Gender):&nbsp;
+                        @Html.DisplayFor(model => model.Gender)
+                    </dt>
+                    <dt>
+                        Result Check:&nbsp;
+                        @Html.DisplayFor(model => model.CheckResult)
+                    </dt>
+
+
+                </dl>
+            </div>
+            <div classs="col-md-6">
+                <dl>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.GuardianName):&nbsp;
+                        @Html.DisplayFor(model => model.GuardianName)
+                    </dt>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.GuardianAddress): &nbsp;
+                        @Html.DisplayFor(model => model.GuardianAddress)
+                    </dt>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.EmailAddress):&nbsp;
+                        @Html.DisplayFor(model => model.EmailAddress)
+                    </dt>
+                    <dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DOB):&nbsp;
+                        @Html.DisplayFor(model => model.DOB)
+                    </dt>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Category):&nbsp;
+                        @Html.DisplayFor(model => model.Category)
+                    </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.PhoneNumber):&nbsp;
+                        @Html.DisplayFor(model => model.PhoneNumber)
+                    </dt>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

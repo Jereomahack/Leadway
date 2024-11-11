@@ -1,0 +1,95 @@
+﻿@model LightWay.Models.HostelMember
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>HostelMember</h4>
+    <hr />
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentNumber)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentName)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.HostelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HostelName)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.Class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Class)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.HostelFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HostelFee)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.RegisteredBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegisteredBy)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.DateRecorded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateRecorded)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-primary" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

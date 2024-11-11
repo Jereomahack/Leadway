@@ -1,0 +1,47 @@
+﻿@model LightWay.Models.Transport
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">  TRANSPORT DETAIL</div>
+    <div class="panel-body">
+        <div>
+            <h4>Transport</h4>
+            <hr />
+            <dl class="col-md-offset-3">
+                <dt>
+                    Route Name: &ensp;
+                    @Html.DisplayFor(model => model.RouteName)
+                </dt>
+                <br />
+
+
+                <dt>
+                    Route Fare:&ensp;
+                    @Html.DisplayFor(model => model.RouteFare)
+                </dt>
+                <br />
+
+
+                <dt>
+                    Vehicle Number:&ensp;
+                    @Html.DisplayFor(model => model.VehicleNumber)
+                </dt>
+                <br />
+                <dt>
+                    Name:&ensp;
+                    @Html.DisplayFor(model => model.DriverName)
+                </dt>
+
+            </dl>
+        </div>
+        @*<p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>*@
+    </div>
+</div>
+
+

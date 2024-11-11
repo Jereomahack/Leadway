@@ -1,0 +1,81 @@
+﻿@model LightWay.Models.HostelMember
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading"> CREATE HOSTEL MEMBER</div>
+    <div class="panel-body">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>HostelMember</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-4 ">
+                        Student Number:<strong> @Html.Raw(ViewBag.StudentNumber)</strong>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-4 ">
+                        Student Name:<strong> @Html.Raw(ViewBag.StudentName)</strong>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-4 ">
+                        Gender:<strong> @Html.Raw(ViewBag.Gender)</strong>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-4">
+                        PhoneNumber: <strong>@Html.Raw(ViewBag.PhoneNumber)</strong>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.HostelName, "Hostel Name", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.DropDownList("HostelName", ViewBag.HostelName as SelectList, "Select Hostel Name", new { @class = "form-control" })
+                        @*@Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })*@
+                    </div>
+                </div>
+
+                <div class="form-group ">
+                    @Html.LabelFor(model => model.Class, "Class", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.DropDownList("Class", ViewBag.Class as SelectList, "Select Hostel Class", new { @class = "form-control" })
+                        @*@Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })*@
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.HostelFee, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.HostelFee, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.HostelFee, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

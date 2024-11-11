@@ -1,0 +1,104 @@
+﻿@model IEnumerable<LightWay.Models.Emailing>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Event Notification Index</div>
+    <div class="panel-body">
+        @if (User.IsInRole("Admin") || User.IsInRole("Principal") || User.IsInRole("Accountant"))
+        {
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+        }
+
+        @using (Html.BeginForm("Index", "Emailings", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+
+
+            @*<h2><b><span style="color:darkseagreen;font-family:Calibri;font-size:large">Index for Student Registration</span></b></h2>*@
+            <p class="col-md-4 pull-right">
+                Seach By Date,Staff Number, Statues @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+                <input type="submit" value="Search" class="btn btn-info" />
+            </p>
+
+                                <br />
+                                <br />
+                                <br />
+
+
+                                <table class="table table-bordered table-condensed table-responsive table-striped">
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Sender)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Statues)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Subject)
+                                        </th>
+                                    </tr>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Sender)
+                                            </td>
+                                            @if (item.Statues == "Not Read")
+                                            {
+                                                <td style="color:red">
+                                                    @Html.DisplayFor(modelItem => item.Statues)
+                                                </td>
+                                            }
+                                            else if (item.Statues == "Read")
+                                            {
+                                                <td style="color:green">
+                                                    @Html.DisplayFor(modelItem => item.Statues)
+                                                </td>
+                                            }
+
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Subject)
+                                            </td>
+
+                                            <td>
+                                                @Html.ActionLink("Read", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })|
+                                                @if (User.IsInRole("Admin"))
+                                                {
+                                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </table>
+        }
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

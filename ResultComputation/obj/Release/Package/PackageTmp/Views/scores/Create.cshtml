@@ -1,0 +1,214 @@
+﻿@model LightWay.Models.score
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">NEW RESULT</div>
+            <div class="panel-body">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div style="color:red;font-size:20px; text-align:center">@ViewBag.Message</div>
+
+                        @*<div class="form-group">
+                                @Html.LabelFor(model => model.StudentNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-6">
+                                    @Html.TextBox("StudentNumber", ViewBag.StudentNumber as string, new { @class = "form-control input-sm", @readonly = "true" })
+                                    @Html.ValidationMessageFor(model => model.StudentNumber, "", new { @class = "text-danger" })
+                                </div>
+                            </div>*@
+
+                        @*<div class="form-group">
+                                @Html.LabelFor(model => model.Surname, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-6">
+                                    @Html.TextBox("Surname", ViewBag.Surname as string, new { @class = "form-control input-sm", @readonly = "true" })
+                                    @Html.ValidationMessageFor(model => model.Surname, "", new { @class = "text-danger" })
+                                </div>
+                            </div>*@
+
+                        @*<div class="form-group">
+                                @Html.LabelFor(model => model.OtherName, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-6">
+                                    @Html.TextBox("OtherName", ViewBag.OtherName as string, new { @class = "form-control input-sm", @readonly = "true" })
+                                    @Html.ValidationMessageFor(model => model.OtherName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>*@
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Class, htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-6">
+                                @Html.DropDownList("Class", null, "select Class", htmlAttributes: new { @class = "cls form-control" })
+                                @*@Html.DropDownList("Class", ViewBag.Class as SelectList, new { @class = "form-control input-sm" })*@
+                                @Html.ValidationMessageFor(model => model.Class, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Subject, "Subject", htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-6">
+                                @Html.DropDownList("Subject", null, htmlAttributes: new { @class = "Sub form-control input-sm"})
+                                @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AcademicYear, htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-6">
+                                @Html.TextBox("AcademicYear", ViewBag.AcademicYear as string, new { @class = "form-control input-sm", @readonly = "true" })
+                                @Html.ValidationMessageFor(model => model.AcademicYear, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Term, htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-6">
+                                @Html.TextBox("Term", ViewBag.Term as string, new { @class = "form-control input-sm", @readonly = "true" })
+                                @Html.ValidationMessageFor(model => model.Term, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                        @if (ViewBag.Category == "Primary" || ViewBag.Category == "Senior" || ViewBag.Category == "Junior")
+                        {
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.FirstCA, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-6">
+                                    @Html.TextBox("FirstCA", ViewBag.FirstCA as string, new { @class = "form-control input-sm", @readonly = "true" })
+                                    @Html.ValidationMessageFor(model => model.FirstCA, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.SecondCA, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-6">
+                                    @Html.TextBox("SecondCA", ViewBag.SecondCA as string, new { @class = "form-control input-sm", @readonly = "true" })
+                                    @Html.ValidationMessageFor(model => model.SecondCA, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Psychomoto, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-6">
+                                    @Html.TextBox("Psychomoto", ViewBag.Psychomoto as string, new { @class = "form-control input-sm", @readonly = "true" })
+                                    @Html.ValidationMessageFor(model => model.Psychomoto, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Exam, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-6">
+                                    @Html.TextBox("Exam", ViewBag.Exam as string, new { @class = "form-control input-sm", @readonly = "true" })
+                                    @Html.ValidationMessageFor(model => model.Exam, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        }
+                        else if (ViewBag.Category == "Nursery" || ViewBag.Category == "Pre-Nursery")
+                        {
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Exam, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-6">
+                                    @Html.TextBox("Exam", ViewBag.Exam as string, new { @class = "form-control input-sm", @readonly = "true" })
+                                    @Html.ValidationMessageFor(model => model.Exam, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ObtainableScore, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-6">
+                                    @Html.TextBox("ObtainableScore", ViewBag.ObtainableScore as string, new { @class = "form-control input-sm", @readonly = "true" })
+                                    @*@Html.ValidationMessageFor(model => model.Exam, "", new { @class = "text-danger" })*@
+                                </div>
+                            </div>
+                        }
+
+                        <div class="form-group">
+                            <div class="col-md-offset-3 col-md-10">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                @*<div>
+                    @Html.ActionLink("Back to List", "Index")
+                    </div>*@
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+@section Scripts {
+<script src="~/Jquerry/jquery-1.10.2.min.js"></script>
+<script src="~/Jquerry/jquerry-ui-min.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.cls').change(function () {
+                var Selecteditem = $(this).val();
+                var subselect = $('.Sub');
+                $.ajax({
+                    cache: false,
+                    type: "GET",
+                    url: "@(Url.Action("GetNo", "Scores"))",
+                    data: { "Class": Selecteditem },
+                    success: function (data) {
+                        subselect.html('');
+                        $.each(data, function (id, option) {
+                            subselect.append($('<option></option>').val(option).html(option));
+                        });
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        alert('Failed to retrieve Subject.');
+                    }
+                });
+            });
+
+        });
+    </script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

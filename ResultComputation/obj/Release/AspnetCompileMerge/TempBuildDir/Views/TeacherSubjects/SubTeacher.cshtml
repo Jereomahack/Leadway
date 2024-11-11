@@ -1,0 +1,80 @@
+﻿@model IEnumerable<LightWay.Models.TeacherSubject>
+
+@{
+    ViewBag.Title = "SubTeacher";
+}
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">TEACHER SUBJECT</div>
+    <div class="panel-body">
+        @*<p>
+                @Html.ActionLink("Create New", "Create")
+            </p>*@
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Subject)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Class)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Subject)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Class)
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

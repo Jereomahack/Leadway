@@ -1,0 +1,63 @@
+﻿@model LightWay.Models.HostelMember
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">HOSTEL MEMBER DETAIL</div>
+    <div class="panel-body">
+        <div>
+            <h4>HostelMember</h4>
+            <hr />
+            <dl class="col-md-offset-4">
+                <dt>
+                    @Html.DisplayNameFor(model => model.StudentNumber):&ensp;
+                    @Html.DisplayFor(model => model.StudentNumber)
+                </dt>
+                <br />
+                <dt>
+                    @Html.DisplayNameFor(model => model.StudentName):&ensp;
+                    @Html.DisplayFor(model => model.StudentName)
+                </dt>
+                <br />
+                <dt>
+                    @Html.DisplayNameFor(model => model.Gender):&ensp;
+                    @Html.DisplayFor(model => model.Gender)
+                </dt>
+                <br />
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PhoneNumber):&ensp;
+                    @Html.DisplayFor(model => model.PhoneNumber)
+                </dt>
+                <br />
+                <dt>
+                    @Html.DisplayNameFor(model => model.HostelName):&ensp;
+                    @Html.DisplayFor(model => model.HostelName)
+                </dt>
+                <br />
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Class):&ensp;
+                    @Html.DisplayFor(model => model.Class)
+                </dt>
+                <br />
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.HostelFee):&ensp;
+                    @Html.DisplayFor(model => model.HostelFee)
+                </dt>
+                <br />
+            </dl>
+        </div>
+        @*<p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>*@
+    </div>
+</div>
+
+
+
+

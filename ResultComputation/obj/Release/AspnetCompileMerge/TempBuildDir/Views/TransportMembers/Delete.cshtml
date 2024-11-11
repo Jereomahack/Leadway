@@ -1,0 +1,83 @@
+﻿@model LightWay.Models.TransportMember
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Delete Transport Member</div>
+    <div class="panel-body">
+        <h3>Are you sure you want to delete this?</h3>
+        <div>
+            <h4>TransportMember</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.StudentNumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StudentNumber)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.StudentName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StudentName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Class)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Class)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PhoneNumber)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Route)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Route)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Driver)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Driver)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

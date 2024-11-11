@@ -1,0 +1,100 @@
+﻿@model LightWay.Models.Payment
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Create Payment</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Create", "Payments", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+
+            <div style="color:red">
+                @ViewBag.nodetail
+            </div>
+                                <div class="form-horizontal">
+                                    <h4>Payment</h4>
+                                    <hr />
+
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        <div class="col-md-offset-4 ">
+                                            Student Number:<strong> @Html.Raw(ViewBag.StudentNumber)</strong>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-4 ">
+                                            Full Name:<strong> @Html.Raw(ViewBag.StudentName)</strong>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-4 ">
+                                            Class:<strong> @Html.Raw(ViewBag.Class)</strong>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Term, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.DropDownListFor(model => model.Term, new SelectListItem[]{
+                new SelectListItem() {Text = "FIRST", Value="FIRST"},
+                 new SelectListItem() {Text = "SECOND", Value="SECOND"},
+  new SelectListItem() {Text = "THIRD", Value="THIRD"} }, "Select Term", new { @class = "form-control" })
+                                            @*@Html.EditorFor(model => model.Gender, new { htmlAttributes = new { @class = "form-control" } })*@
+                                            @Html.ValidationMessageFor(model => model.Term, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <p class="control-label col-md-4"><b>Academic Year</b></p>
+                                        <div class="col-md-8">
+                                            @Html.DropDownList("Session", (SelectList)ViewBag.Session, "Select Session", new { @class = "form-control" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <p class="control-label col-md-4"><b>Payment Type</b></p>
+                                        <div class="col-md-8">
+                                            @Html.DropDownList("PaymentFor", (SelectList)ViewBag.PaymentType, "Select Payment Type", new { @class = "form-control" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Balance, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.Balance, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Balance, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Create" class="btn btn-primary" />
+                                        </div>
+                                    </div>
+                                </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

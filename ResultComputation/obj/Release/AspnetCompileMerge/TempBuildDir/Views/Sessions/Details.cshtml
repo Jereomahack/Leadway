@@ -1,0 +1,26 @@
+﻿@model LightWay.Models.Session
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AcademicYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcademicYear)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,47 @@
+﻿@model LightWay.Models.Emailing
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">EVENT NOTIFICATION DETAIL</div>
+    <div class="panel-body">
+
+        <div>
+            <h4>Event Notification</h4>
+            <hr />
+            <div class="row">
+                <div class="col-md-12">
+                    <dl>
+                        <dt>
+                            <span style="color:blue"> @Html.DisplayNameFor(model => model.Subject)</span>:&emsp;
+                            @Html.DisplayFor(model => model.Subject)
+                        </dt>
+                    </dl>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <dl>
+                        <dt>
+                            <span style="color:blue"> @Html.DisplayNameFor(model => model.Message)</span>
+                            <br />
+                            @Html.DisplayFor(model => model.Message)
+                        </dt>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <p>
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</div>
+
+
+
+
+
+
+

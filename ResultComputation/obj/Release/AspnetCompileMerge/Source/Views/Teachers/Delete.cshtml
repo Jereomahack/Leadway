@@ -1,0 +1,104 @@
+﻿@model LightWay.Models.Teachers
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">DELETE TEACHER</div>
+    <div class="panel-body">
+        <div>
+            <h4>Teachers</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.StaffNumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StaffNumber)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FullName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FullName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Gender)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ResidentialAddress)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ResidentialAddress)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PhoneNumber)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EmailAddress)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EmailAddress)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DOA)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DOA)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BasicSalary)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BasicSalary)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Passport)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Passport)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-primary" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

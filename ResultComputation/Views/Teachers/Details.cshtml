@@ -1,0 +1,108 @@
+﻿@model LightWay.Models.Teachers
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Teacher Details</div>
+    <div class="panel-body">
+        <div>
+            <hr />
+
+            <div class="col-md-offset-8">
+                <dl>
+                    @if (Model.Passport != null)
+                    {
+                        <dd>
+                            <img src="data:image;base64,@System.Convert.ToBase64String(Model.Passport)" width="120" height="120" class="img-thumbnail" />
+                        </dd>
+                    }
+                    else
+                    {
+                        <dd>
+                            <img src="#" width="120" height="120" class="img-thumbnail" />
+                        </dd>
+                    }
+                </dl>
+            </div>
+            <br />
+            <br />
+
+
+            <dl>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.StaffNumber): &emsp;
+                    @Html.DisplayFor(model => model.StaffNumber)
+                </dt>
+                <br />
+                <dt>
+                    @Html.DisplayNameFor(model => model.FullName):&emsp;
+                    @Html.DisplayFor(model => model.FullName)
+                </dt>
+                <br />
+                <dt>
+                    @Html.DisplayNameFor(model => model.Gender):&emsp;
+                    @Html.DisplayFor(model => model.Gender)
+                </dt>
+                <br />
+                <dt>
+                    @Html.DisplayNameFor(model => model.ResidentialAddress):&emsp;
+                    @Html.DisplayFor(model => model.ResidentialAddress)
+                </dt>
+
+                <br />
+                <dt>
+                    @Html.DisplayNameFor(model => model.PhoneNumber):&emsp;
+                    @Html.DisplayFor(model => model.PhoneNumber)
+                </dt>
+                <br />
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EmailAddress):&emsp;
+                    @Html.DisplayFor(model => model.EmailAddress)
+                </dt>
+                <br />
+                <dt>
+                    @Html.DisplayNameFor(model => model.DOA):&emsp;
+                    @Html.DisplayFor(model => model.DOA)
+                </dt>
+                <br />
+                @if (User.IsInRole("Admin") || User.IsInRole("Principal") || User.IsInRole("Proprietor"))
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.BasicSalary):&emsp;
+                        NGN  @Html.DisplayFor(model => model.BasicSalary)
+                    </dt>
+                                        <br />
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.Name):&emsp;
+                                            @Html.DisplayFor(model => model.Name)
+                                        </dt>
+                }
+
+
+            </dl>
+        </div>
+        <p>
+            @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to Teacher List", "Index")*@
+        </p>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

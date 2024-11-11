@@ -1,0 +1,67 @@
+﻿@model IEnumerable<LightWay.Models.CodeGenerator>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading"><strong>CODE GENERATOR INDEX</strong></div>
+    <div class="panel-body">
+        <div style="color:green;font-size:20px">
+            @ViewBag.Detail
+        </div>
+
+        @using (Html.BeginForm("Index", "CodeGenerators", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            <p class="col-md-4 pull-right">
+                Seach PhoneNumber, @Html.TextBox("Phone", ViewBag.Phone as string, new { @class = "form-control" })
+                <input type="submit" value="Search" class="btn btn-info" />
+            </p>
+
+            <br />
+            <br />
+            <br />
+
+                                <p>
+                                    @Html.ActionLink("Create New", "Create")
+                                </p>
+                                <table class="table table-hover table-bordered table-responsive table-condensed">
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Parent)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.PhoneNumber)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.codes)
+                                        </th>
+                                        <th></th>
+                                    </tr>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Parent)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.codes)
+                                            </td>
+                                            <td>
+                                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-xs" })
+                                                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-xs" })
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </table>
+        }
+
+    </div>
+</div>

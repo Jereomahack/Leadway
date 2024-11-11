@@ -1,0 +1,121 @@
+﻿@model LightWay.Models.score
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">DELETE RESULT</div>
+    <div class="panel-body">
+        <h3>Are you sure you want to delete this?</h3>
+        <div>
+
+            <dl>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Class):&ensp;
+                    @Html.DisplayFor(model => model.Class)
+                </dt>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Subject):&ensp;
+                    @Html.DisplayFor(model => model.Subject)
+                </dt>
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.StudentNumber):&ensp;
+                    @Html.DisplayFor(model => model.StudentNumber)
+                </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Surname):&ensp;
+                    @Html.DisplayFor(model => model.Surname)
+                </dt>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.OtherName):&ensp;
+                    @Html.DisplayFor(model => model.OtherName)
+                </dt>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Term):&ensp;
+                    @Html.DisplayFor(model => model.Term)
+                </dt>
+
+                @if (ViewBag.Category == "Primary" || ViewBag.Category == "Senior" || ViewBag.Category == "Junior")
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FirstCA):&ensp;
+                        @Html.DisplayFor(model => model.FirstCA)
+                    </dt>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.SecondCA):&ensp;
+                                            @Html.DisplayFor(model => model.SecondCA)
+                                        </dt>
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.Psychomoto):&ensp;
+                                            @Html.DisplayFor(model => model.Psychomoto)
+                                        </dt>
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.Exam):&ensp;
+                                            @Html.DisplayFor(model => model.Exam)
+                                        </dt>
+                }
+                else if (ViewBag.Category == "Nursery" || ViewBag.Category == "Pre-Nursery")
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ObtainableScore):&ensp;
+                        @Html.DisplayFor(model => model.ObtainableScore)
+                    </dt>
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.Exam):&ensp;
+                                            @Html.DisplayFor(model => model.Exam)
+                                        </dt>
+                }
+                <dt>
+                    @Html.DisplayNameFor(model => model.Total):&ensp;
+                    @Html.DisplayFor(model => model.Total)
+                </dt>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AVERAGE):&ensp;
+                    @Html.DisplayFor(model => model.AVERAGE)
+                </dt>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.HIGHEST):&ensp;
+                    @Html.DisplayFor(model => model.HIGHEST)
+                </dt>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.LOWEST):&ensp;
+                    @Html.DisplayFor(model => model.LOWEST)
+                </dt>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.GRADE):&ensp;
+                    @Html.DisplayFor(model => model.GRADE)
+                </dt>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.REMARK):&ensp;
+                    @Html.DisplayFor(model => model.REMARK)
+                </dt>
+            </dl>
+
+
+        </div>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color col-md-offset-2">
+            <input type="submit" value="Delete" class="btn btn-primary" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+    <br />
+</div>
+

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<LightWay.Models.ParentCode>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="panel panel-primary">
+    <div style="color:green;font-size:20px">
+        @ViewBag.Message
+    </div>
+    <div class="panel-heading">Parent Code Index</div>
+    <div class="panel-body">
+
+        @using (Html.BeginForm("Index", "ParentCodes", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            <div class="col-md-4 pull-right">
+                Search by Phone Number   @Html.TextBox("search", ViewBag.search as string, new { @class = "form-control" })
+                <br />
+                <input type="submit" value="Search" class="btn btn-primary" />
+                <br />
+            </div>
+
+        }
+        <br />
+        <br />
+        @if (User.IsInRole("Admin"))
+        {
+            <table class="table table-bordered table-condensed table-responsive table-striped">
+                <tr>
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.StudentNumber)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ParentName)
+                        </th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.PhoneNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.codes)
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.StudentNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ParentName)
+                            </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.codes)
+                        </td>
+
+                        <td>
+                            @Html.ActionLink(" ", "details", new { id = item.Id }, new { @class = "glyphicon glyphicon-print" })
+                        </td>
+
+                    </tr>
+                }
+
+            </table>
+
+        }
+
+    </div>
+</div>
+
+
+
+
+

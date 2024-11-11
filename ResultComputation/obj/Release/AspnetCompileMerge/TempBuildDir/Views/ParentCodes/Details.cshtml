@@ -1,0 +1,80 @@
+﻿@model LightWay.Models.ParentCode
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+@*<link rel="stylesheet" type="text/css" media="print" href="~/Content/css/bootstrap.css">*@
+
+
+
+
+
+<br />
+<br />
+<div class="panel panel-primary">
+    @*<div class="panel-heading"></div>*@
+    <div class="panel-body">
+        @*<div class="row">
+            <div class="col-md-12">
+                <img src="~/Content/images/school logo.png" width="100" height="90"  />
+            </div>
+        </div>*@
+        <div class="row">
+            <div class="col-md-12">
+                <p style="text-align:center;color:red;font-size:40px;font-family:Arial, Helvetica, sans-serif"><b>@ViewBag.School</b></p>
+                <p style="text-align:center;color:blue;font-size:20px;font-family:Courier New, Courier, monospace" class="textcolor"><b>58, PARAKOU Street WUSE II, ABUJA</b></>
+                <p style="text-align:center;color:dodgerblue;font-size:12px;font-family:Courier New, Courier, monospace">Telephone:  07040079595    Email:  mail@lightwayacademy.com       Website: www.lightwayacademy.com</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+                <p>
+                    Hello @ViewBag.ParentName,
+                </p>
+
+                <br />
+                <p style="text-align:center">
+                    @*&emsp;&emsp;&emsp;&emsp;*@ <span><b>RESULT CHECKING DETAIL</b></span>
+                </p>
+                <br />
+                <p>
+                    With respect to the on going Computerization processs going on in the school, Learner's performance report will be accessed  by
+                    using any internet enable devices such as computers, phones etc. With this process in place, parents can also access previous performance report of their children.
+                </p>
+                <p>
+                    <b>Steps to checking your child result</b>
+                    <br />
+
+                    <ul>
+                        <li>Enter http://lightwayacademy.azurewebsites.net/parentcodes/create into your web browser</li>
+                        <li>Enter <span style="color:red"><b>@ViewBag.Phone</b></span>  into the phone textbox and <span style="color:darkblue"><b>@ViewBag.Code</b></span>  into the code textbox</li>
+                        <li>Select the child admission number, please note if you have more than one child, their admission numbers will be listed</li>
+                        <li>Select the Term e.g(FIRST)</li>
+                        <li>Click Search</li>
+                    </ul>
+
+                    <b>Login Details</b>
+                    <ul>
+                        <li style="font-size:20px">Phone Number: @ViewBag.Phone </li>
+                        <li style="font-size:20px">Code: @ViewBag.Code</li>
+                    </ul>
+
+                    The child performance report, if all scores has been entered will be display and can be printed or downloaded.
+                </p>
+                <br />
+                <p>Thank for your usual cooperation</p>
+                <br />
+                <br />
+                <br />
+                <br />
+                <p>Bursaar</p>
+                <p>For: @ViewBag.School</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+

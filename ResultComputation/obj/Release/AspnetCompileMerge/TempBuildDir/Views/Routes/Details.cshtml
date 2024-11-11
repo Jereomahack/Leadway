@@ -1,0 +1,39 @@
+﻿@model LightWay.Models.Route
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Route</div>
+    <div class="panel-body">
+        <div>
+            <h4>Route</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.RouteName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.RouteName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.RouteAddress)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.RouteAddress)
+                </dd>
+
+            </dl>
+        </div>
+        @*<p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>*@
+
+    </div>
+</div>
+
+                           

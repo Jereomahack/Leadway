@@ -1,0 +1,137 @@
+﻿@model LightWay.Models.Expenditure
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading"> Expenditures FeedBack</div>
+    <div class="panel-body">
+        <div>
+            <h4>Expenditure</h4>
+            <hr />
+            <div class="row">
+                <div class="col-md-6">
+                    <dl>
+                        <dt>
+                            Amount:&emsp;
+                            @Html.DisplayFor(model => model.AmountRequested)
+
+                        </dt>
+                        <br />
+                        <dt>
+                            Sent By:&emsp;
+                            @Html.DisplayFor(model => model.RequestedBy)
+
+                        </dt>
+                        <br />
+
+                        @if (Model.Statues == "Approved")
+                        {
+                            <dt style="color:green">
+                                Statues:&emsp;
+                                @Html.DisplayFor(model => model.Statues)
+
+                            </dt>
+                        }
+                        else
+                        {
+                            <dt>
+                                Statues:&emsp;
+                                @Html.DisplayFor(model => model.Statues)
+
+                            </dt>
+                        }
+
+                    </dl>
+                </div>
+                <div class="col-md-6">
+                    <dl>
+                        <dt>
+                            Receiver:&emsp;
+                            @Html.DisplayFor(model => model.Vissibility)
+                        </dt>
+                        <br />
+                        <dt>
+                            Date:&emsp;
+                            @Html.DisplayFor(model => model.DateRecorded)
+                        </dt>
+                        <br />
+                        <dt>
+                            Approved By:&emsp;
+                            @Html.DisplayFor(model => model.ApprovedBy)
+                        </dt>
+
+                    </dl>
+                    <br />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <dl>
+                        <dt>
+                            Purpose:&emsp;
+                            @Html.DisplayFor(model => model.Purpose)
+                        </dt>
+                    </dl>
+                </div>
+                <div class="col-md-6">
+                    @if (User.IsInRole("Accountant"))
+                    {
+
+                        if (Model.DeclineReason != null)
+                        {
+                            <dl>
+                                <dt>
+                                    Reason For Decline:&emsp;
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.DeclineReason)
+                                </dd>
+                            </dl>
+                        }
+                    }
+
+                </div>
+            </div>
+
+        </div>
+        <p class="col-md-offset-10">
+            @if (User.IsInRole("Principal"))
+            {
+                if (Model.Statues != "Approved")
+                {
+                    @Html.ActionLink("Aprove", "Approve", new { id = Model.Id }, new { @class = "btn btn-primary btn-xs" })
+                    <span />
+                                        @Html.ActionLink("Decline", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary btn-xs" })
+                }
+
+            }
+            else if (User.IsInRole("Accountant"))
+            {
+                if (Model.ApprovedBy == null)
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary btn-xs" })
+                }
+
+            }
+
+        </p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

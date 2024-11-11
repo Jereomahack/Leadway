@@ -1,0 +1,77 @@
+﻿@model IEnumerable<LightWay.Models.Deduction>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Deduction Index </div>
+    <div class="panel-body">
+        <table class="table table-bordered table-responsive table-striped">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.StaffNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StaffName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DeductionType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DeductionAmount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Session)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StaffNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StaffName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DeductionType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DeductionAmount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Session)
+                    </td>
+                    <td>
+                        @if (User.IsInRole("Accountant"))
+                        {
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                        }
+                        else if (User.IsInRole("Principal"))
+                        {
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                            @Html.ActionLink("Allow Edit", "Allow", new { id = item.Id }, new { @class = "btn btn-warning btn-xs" })
+                        }
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

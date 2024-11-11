@@ -1,0 +1,94 @@
+﻿@model LightWay.Models.ParentCode
+
+@{
+    ViewBag.Title = "Create";
+    Layout = null;
+}
+
+<link href="~/css/bootstrap.min.css" rel="stylesheet">
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-body">
+            <div class="col-md-12" style="color:red;font-size:20px">
+                @ViewBag.NoDetail
+                <span style="color:red;font-size:large">@ViewBag.Message</span>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-primary ">
+                        <div class="panel-heading">Generate Code for checking Result</div>
+                        <div class="panel-body">
+                            @using (Html.BeginForm("Create", "ParentCodes", FormMethod.Post, new { @class = "form-horizontal" }))
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-horizontal">
+                                    <h4>Generate code for checking student result</h4>
+                                    <hr />
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.codes,"Code", htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.codes, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.codes, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Proceed" class="btn btn-primary" />
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                            <br />
+                            <p style="font-size:20px">To view or print Learner's Previous Result's <a href="~/scores/IndexPreviousResult" class="btn btn-primary btn-sm">CLICK HERE</a> </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-primary">
+                        <div style="font-size:20px" class="col-md-offset-4"><b><u>Instruction</u></b></div>
+                        <div class="panel-body">
+                            <ul style="list-style:circle">
+                                <li>If you have not generated any code before, please enter the phone number that was used for your child Admission into the School, a Code will be send to your phone. which will be used Along side your Phone Number</li>
+                                <li>
+                                    If you have generated a Login Code before, to check your child result, please enter the phone number used for your child admission and
+                                    your Login Codes and  click the Proceed Button
+                                </li>
+                                <li>
+                                    If you cannot remember your Login Code, enter the Phone number used for Your child Admission and click Proceed
+                                    , a Login Code will be sent to your phone.
+                                </li>
+                                <li>
+                                    To Check your Child Result Please enter The phone Number Used for your Child Admission into the School and Your Login Code, Click Proceed
+                                </li>
+                            </ul>
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

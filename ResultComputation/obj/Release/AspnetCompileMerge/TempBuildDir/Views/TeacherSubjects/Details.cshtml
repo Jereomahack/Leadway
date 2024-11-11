@@ -1,0 +1,42 @@
+﻿@model LightWay.Models.TeacherSubject
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<div>
+    <h4>TeacherSubject</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Class)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TeacherNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeacherNum)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

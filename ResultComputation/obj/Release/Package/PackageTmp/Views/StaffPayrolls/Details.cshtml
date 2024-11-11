@@ -1,0 +1,108 @@
+﻿@model LightWay.Models.StaffPayroll
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<style type="text/css">
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        margin: 0;
+        padding: 0;
+    }
+
+    table {
+        border: 1px solid black;
+        border-spacing: 0px 0px;
+    }
+
+    th {
+        font-weight: bold;
+        vertical-align: top;
+        text-align: left;
+        border: 1px solid black;
+        padding: 2px;
+    }
+
+    td {
+        vertical-align: top;
+        text-align: left;
+        border: 1px solid black;
+        padding: 2px;
+    }
+
+    td2 {
+        vertical-align: top;
+        text-align: left;
+        padding: 2px;
+    }
+</style>
+
+<div class="panel panel-primary" style="width:950px">
+    <div class="panel-heading">Salary Details </div>
+    <div class="panel-body">
+        <h4 style="width:900px;text-align:center;font-size:20px"><b>LIGHT ACADEMY STAFF PAYMENT SLIP</b> </h4>
+        <h6 style="width:900px;text-align:center"><b>DETAIL  OF SALARY PAID FOR &emsp; @ViewBag.Month  &emsp;@ViewBag.Session</b> </h6>
+        <hr />
+        <div>
+            <table width="900" border="0" align="left" cellpadding="0" cellspacing="0" style="margin-right:10px;">
+                <tr>
+                    <td style="width:300px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong>Staff Number</strong></td>
+                    <td style="width:300px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong><b>@Html.DisplayFor(model => model.StaffNumber)</b></strong></td>
+                </tr>
+                <tr>
+                    <td style="width:300px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong>Staff Name</strong></td>
+                    <td style="width:500px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong><b>@Html.DisplayFor(model => model.StaffName)</b></strong></td>
+                </tr>
+                <tr>
+                    <td style="width:500px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong>Salary</strong></td>
+                    <td style="width:500px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong><b>@Html.DisplayFor(model => model.Amount)</b></strong></td>
+                </tr>
+                <tr>
+                    <td style="width:500px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong>Outstandings</strong></td>
+                    <td style="width:500px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong><b>@Html.DisplayFor(model => model.Outstandings)</b></strong></td>
+                </tr>
+                <tr>
+                    <td style="width:500px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong>Amount Deducted</strong></td>
+                    <td style="width:500px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong><b>@Html.DisplayFor(model => model.AmountDeducted)</b></strong></td>
+                </tr>
+                <tr>
+                    <td style="width:500px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong>Bonus Added</strong></td>
+                    <td style="width:500px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong><b>@Html.DisplayFor(model => model.BonusAmount)</b></strong></td>
+                </tr>
+                <tr>
+                    <td style="width:500px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color:red"><strong>Amount Paid After Deductions </strong></td>
+                    <td style="width:500px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color:red"><strong><b>@Html.DisplayFor(model => model.AmountPaidAfterDeduction)</b></strong></td>
+                </tr>
+                <tr>
+                    <td style="width:500px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong>Term</strong></td>
+                    <td style="width:500px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong><b>@Html.DisplayFor(model => model.Term)</b></strong></td>
+                </tr>
+                <tr>
+                    <td style="width:300px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong>Session</strong></td>
+                    <td style="width:300px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong><b>@Html.DisplayFor(model => model.Session)</b></strong></td>
+                </tr>
+                <tr>
+                    <td style="width:300px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong>Paid By</strong></td>
+                    <td style="width:300px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong><b>@Html.DisplayFor(model => model.EnteredBy)</b></strong></td>
+                </tr>
+                <tr>
+                    <td style="width:300px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong>Month</strong></td>
+                    <td style="width:300px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong><b>@Html.DisplayFor(model => model.Month)</b></strong></td>
+                </tr>
+                <tr>
+                    <td style="width:500px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong>Payment Date</strong></td>
+                    <td style="width:500px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><strong><b>@Html.DisplayFor(model => model.DateofPayment)</b></strong></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+

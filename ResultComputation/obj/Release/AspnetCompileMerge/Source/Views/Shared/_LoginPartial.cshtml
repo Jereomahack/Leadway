@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-left bootstrap-admin-theme-change-size">
+            <li style="font-family:'Times New Roman', Times, serif">
+                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "glyphicon glyphicon-user",@style="color:red;font-size:18px" })
+            </li>
+            <li class="btn btn-primary btn-sm"><a href="javascript:document.getElementById('logoutForm').submit()" style="color:white">Log off</a></li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right bootstrap-admin-theme-change-size">
+        @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
+        <li><a href="http://www.lightwayacademy.com"  style="color:darkblue">HOME</a></li>
+        <li class="btn btn-primary btn-sm" style="color:white">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

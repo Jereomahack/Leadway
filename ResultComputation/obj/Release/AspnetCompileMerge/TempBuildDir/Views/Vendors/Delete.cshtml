@@ -1,0 +1,73 @@
+﻿@model LightWay.Models.Vendor
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading"> Delete Vendor</div>
+    <div class="panel-body">
+        <h3>Are you sure you want to delete this?</h3>
+        <div>
+            <h4>Vendor</h4>
+            <hr />
+            <dl>
+                <dt>
+                    @Html.DisplayNameFor(model => model.VendorName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.VendorName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PhoneNumber)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.VendorAddress)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.VendorAddress)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.RegisteredBy)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.RegisteredBy)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateRecorded)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DateRecorded)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-primary" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<LightWay.Models.BonusType>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading"> Bonus Type Index </div>
+    <div class="panel-body">
+        @if (User.IsInRole("Accountant"))
+        {
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+        }
+
+        <table class="table table-bordered table-responsive table-striped">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.BonusTypeName)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BonusTypeName)
+                    </td>
+                    <td>
+                        @if (User.IsInRole("Accountant"))
+                        {
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                        }
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+
+    </div>
+</div>
+

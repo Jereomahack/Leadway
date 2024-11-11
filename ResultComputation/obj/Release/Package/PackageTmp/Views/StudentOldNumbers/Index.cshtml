@@ -1,0 +1,63 @@
+﻿@model IEnumerable<LightWay.Models.StudentOldNumbers>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<div>
+    <div class="panel panel-primary">
+        <div class="panel-heading"><strong>STUDENT OLD ADMISSION NUMBER LIST</strong></div>
+        <div class="panel-body">
+            @using (Html.BeginForm("Index", "StudentOldNumbers", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                <p class="col-md-4 pull-right">
+                    Seach By student Full Name, @Html.TextBox("Name", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+                    <input type="submit" value="Search" class="btn btn-info" />
+                </p>
+
+                <br />
+                <br />
+                <br />
+            }
+
+
+            <table class="table table-bordered table-condensed table-responsive">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StudentName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StudentNumber)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StudentName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StudentNumber)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-Danger btn-xs" })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

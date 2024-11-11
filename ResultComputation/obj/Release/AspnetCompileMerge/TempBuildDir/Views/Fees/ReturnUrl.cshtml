@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "ReturnUrl";
+}
+
+@if (ViewBag.Rescode == "00")
+{
+    <div>
+        <h2 style="color:green;text-align:center;font-weight:bold">TRANSACTION SUCCESSFUL</h2>
+        <h3 style="color:darkblue;text-align:center;font-weight:bold">Transaction Number: @ViewBag.Transfref</h3>
+        <h3 style="color:darkblue;text-align:center;font-weight:bold">Child Admission Number: @ViewBag.RegNo</h3>
+        <h3 style="color:darkblue;text-align:center;font-weight:bold">Child Full Name: @ViewBag.Name</h3>
+
+        <p>Transaction was successful. An email of a successful payment has been sent to the email provided. Also ensure to keep the transaction number above for further evident of payments. Thank you</p>
+    </div>
+}
+else
+{
+    <div>
+        <h2 style="color:red;text-align:center"><b>TRANSACTION STATUS</b></h2>
+        <h3 style="text-align:center">
+            @ViewBag.Resdes<a class="gethist" href="@Url.Action("Edit", "Fees", new { id=ViewBag.Id})"><span class="btn btn-primary btn-xs">Click Here to try again</span> </a>
+        </h3>
+        <h3 style="text-align:center">
+            @ViewBag.Payref
+        </h3>
+    </div>
+}
+
+

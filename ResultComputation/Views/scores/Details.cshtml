@@ -1,0 +1,248 @@
+﻿@model LightWay.Models.score
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.Class)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Class)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Subject)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Subject)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.StudentNumber)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.StudentNumber)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Surname)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Surname)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.OtherName)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.OtherName)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Term)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Term)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.AcademicYear)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.AcademicYear)
+    </dd>
+
+    @if (ViewBag.Category == "Primary" || ViewBag.Category == "Senior" || ViewBag.Category == "Junior")
+            {
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstCA)
+        </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FirstCA)
+                </dd>
+
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.SecondCA)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.SecondCA)
+                                    </dd>
+
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.Exam)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Exam)
+                                    </dd>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.Psychomoto)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Psychomoto)
+                                    </dd>
+    }
+    else if (ViewBag.Category == "Nursery" || ViewBag.Category == "Pre-Nursery")
+    {
+        <dt>
+            @Html.DisplayNameFor(model => model.ObtainableScore)
+        </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ObtainableScore)
+                </dd>
+
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.Exam)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Exam)
+                                    </dd>
+    }
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Total)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Total)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.AVERAGE)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.AVERAGE)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.HIGHEST)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.HIGHEST)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.LOWEST)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.LOWEST)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.GRADE)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.GRADE)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.REMARK)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.REMARK)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.PreparedBy)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.PreparedBy)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.DateRecorded)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.DateRecorded)
+    </dd>
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

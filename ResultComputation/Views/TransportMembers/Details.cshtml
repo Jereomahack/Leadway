@@ -1,0 +1,76 @@
+﻿@model LightWay.Models.TransportMember
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Transport Member Detail</div>
+    <div class="panel-body">
+        <div>
+            <h4>TransportMember</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.StudentNumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StudentNumber)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.StudentName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StudentName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Class)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Class)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PhoneNumber)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Route)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Route)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Driver)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Driver)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+
+    </div>
+</div>
+
+
+
+
+
+                          

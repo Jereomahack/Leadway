@@ -1,0 +1,75 @@
+﻿@model IEnumerable<LightWay.Models.StaffPayroll>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Salary History</div>
+    <div class="panel-body">
+        @*<p>
+                @Html.ActionLink("Create New", "Create")
+            </p>*@
+        <table class="table table-bordered table-condensed table-responsive table-striped">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.StaffNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StaffName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Session)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Term)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Month)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Outstandings)
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StaffNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StaffName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Session)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Term)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Month)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Outstandings)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+</div>
+

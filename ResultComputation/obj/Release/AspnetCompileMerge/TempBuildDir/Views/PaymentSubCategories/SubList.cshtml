@@ -1,0 +1,44 @@
+﻿@model IEnumerable<LightWay.Models.PaymentSubCategory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-condensed table-responsive table-striped">
+    <tr>
+        <th>
+            Category Name
+        </th>
+        <th>
+            Sub Name
+        </th>
+        <th>
+            Amount
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentCat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubCatName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

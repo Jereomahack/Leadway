@@ -1,0 +1,40 @@
+﻿@model LightWay.Models.ClassList
+
+@*@{
+    ViewBag.Title = "Delete";
+}*@
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">DELETE CLASS and FORM MASTER</div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FormMaster)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FormMaster)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ClassName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ClassName)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</div>

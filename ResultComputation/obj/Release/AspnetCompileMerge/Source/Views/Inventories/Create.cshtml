@@ -1,0 +1,77 @@
+﻿@model LightWay.Models.Inventory
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">  Create An Inventory</div>
+    <div class="panel-body">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Inventory</h4>
+                <hr />
+                <div class="form-group ">
+                    <p class="control-label col-md-4"><b>Vendor</b></p>
+                    <div class="col-md-8">
+                        @Html.DropDownList("Vendor", (SelectList)ViewBag.Vendor, "Select Vendor", new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <p class="control-label col-md-4"><b>Product</b></p>
+                    <div class="col-md-8">
+                        @Html.DropDownList("Product", (SelectList)ViewBag.Product, "Select Product", new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.UnitPrice, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.UnitPrice, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UnitPrice, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Payment, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.DropDownListFor(model => model.Payment, new SelectListItem[]{
+                new SelectListItem() {Text = "Cash", Value="Cash"},
+                 new SelectListItem() {Text = "Credit", Value="Credit"},
+  new SelectListItem() {Text = "Cheque", Value="Cheque"} }, "Select Term", new { @class = "form-control" })
+                        @*@Html.EditorFor(model => model.Gender, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @Html.ValidationMessageFor(model => model.Payment, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

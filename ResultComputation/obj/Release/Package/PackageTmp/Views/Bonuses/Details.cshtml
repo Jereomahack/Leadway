@@ -1,0 +1,96 @@
+﻿@model LightWay.Models.Bonus
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading"> Bonus Detail </div>
+    <div class="panel-body">
+        <div>
+            <h4>Bonus</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.StaffNumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StaffNumber)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.StaffName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StaffName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BonusType)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BonusType)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BonusAmount)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BonusAmount)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Session)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Session)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Term)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Term)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Month)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Month)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EnteredBy)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EnteredBy)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateCreated)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DateCreated)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+
+    </div>
+</div>
+
+
+                           

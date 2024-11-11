@@ -1,0 +1,270 @@
+﻿@model IEnumerable<LightWay.Models.score>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">UPDATE STUDENTS RESULTS</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Indexupdate", "Scores", FormMethod.Get))
+            {
+            <div>
+                Class:     @Html.DropDownList("Class", ViewBag.Class as SelectList,"Select Class", new { @class="cls"}) &emsp; Subject: @Html.DropDownList("Subject", ViewBag.Subject as SelectList, new { @class = "Sub" })&emsp; Category   @Html.DropDownList("Category", new SelectListItem[]{
+                new SelectListItem() {Text = "Nursery", Value="Nursery"},
+                new SelectListItem() {Text = "Others", Value="Others"} }) &emsp; <input type="submit" value="Search" class="btn btn-primary input-sm" />
+            </div>
+            <br />
+        }
+        @using (Html.BeginForm("IndexUpdate", "scores", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+
+
+            <table class="table table-bordered table-condensed table-responsive table-striped">
+                <tr>
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.ClassLists.ClassName)
+                        </th>*@
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.Subject)
+                        </th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.StudentNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Surname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OtherName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Term)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Subject)
+                    </th>
+
+                    @if (ViewBag.Category == "Others")
+                    {
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.FirstCA)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SecondCA)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Psychomoto)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Exam)
+                        </th>
+                    }
+                    else if (ViewBag.Category == "Nursery")
+                    {
+                        <th>
+                            Obtainable Score
+                        </th>
+
+                        <th>
+                            Score Obtained
+                        </th>
+                    }
+
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.ClassLists.ClassName)
+                            </td>*@
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StudentNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Surname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OtherName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelitem => item.Term)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Subject)
+                        </td>
+
+                        @if (ViewBag.Category == "Others")
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FirstCA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SecondCA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Psychomoto)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Exam)
+                            </td>
+                        }
+                        else if (ViewBag.Category == "Nursery")
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ObtainableScore)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Exam)
+                            </td>
+                        }
+
+                        <td>
+                            @*@if (item.Exam == 0)
+                            {*@
+                                @Html.ActionLink("update", "Edit", null, new { id = item.Id }, new { @class = "lnkvcreate btn btn-warning btn-xs" })
+                                @Html.ActionLink("View", "Details", new { id = item.Id }, new { @class = "lnkDetail btn btn-primary btn-xs" })
+                                @Html.ActionLink("Remove", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-xs" })
+                            @*}
+                            else
+                            {
+                                @Html.ActionLink("View", "Details", new { id = item.Id }, new { @class = "lnkDetail btn btn-primary btn-xs" })
+                                @Html.ActionLink("Remove", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-xs" })
+                            }*@
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        }
+    </div>
+</div>
+
+<div id="Admission" style="display:none"></div>
+<div id="Detail" style="display:none"></div>
+<div id="alertview" style="display:none">@TempData["MSG"]</div>
+
+@section Scripts{
+<script src="~/Jquerry/jquery-1.10.2.min.js"></script>
+<script src="~/Jquerry/jquerry-ui-min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+              $('.cls').change(function () {
+                var Selecteditem = $(this).val();
+                var subselect = $('.Sub');
+                $.ajax({
+                    cache: false,
+                    type: "GET",
+                    url: "@(Url.Action("GetNo", "Scores"))",
+                    data: { "Class": Selecteditem },
+                    success: function (data) {
+                        subselect.html('');
+                        $.each(data, function (id, option) {
+                            subselect.append($('<option></option>').val(option).html(option));
+                        });
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        alert('Failed to retrieve Subject.');
+                    }
+                });
+            });
+
+
+            var url = "";
+            $("#Admission").dialog({
+                title: 'Update Scores',
+                autoOpen: false,
+                width: 800,
+                height: 500,
+                modal: true,
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                draggable: true,
+                open: function (event, ui) {
+                    $(".ui-dialog-titlebar-close").hide();
+                    $(this).load(url);
+                },
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+            $("#Detail").dialog({
+                title: 'Update Scores',
+                autoOpen: false,
+                width: 800,
+                height: 500,
+                modal: true,
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                draggable: true,
+                open: function (event, ui) {
+                    $(".ui-dialog-titlebar-close").hide();
+                    $(this).load(url);
+                },
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+
+            $("#alertview").dialog({
+                title: 'Confirmation Message',
+                autoOpen: false,
+                modal: true,
+                height: 200,
+                width: 350,
+                draggable: true,
+                open: function (event, ui) {
+                    $(".ui-dialog-titlebar-close").hide();
+                },
+                buttons: {
+                    "OK": function () {
+                        $(this).dialog("close");
+                    },
+                }
+            });
+
+            if ('@TempData["MSG"]' != "") {
+                $("#alertview").dialog("open");
+            }
+
+            $(".lnkvcreate").click(function () {
+                url = $(this).attr('href');
+                $(".ui-dialog-title").html("Update Scores");
+                $(".ui-dialog-titlebar").css({
+                    'background-color': '#0A3961',
+                    'color': 'white'
+                });
+                $("#Admission").dialog("open");
+                return false;
+            });
+            $(".lnkDetail").click("click", function (e) {
+                // e.preventDefault(); use this or return false
+                url = $(this).attr('href');
+                $(".ui-dialog-title").html("Details of Score");
+                $(".ui-dialog-titlebar").css({
+                    'background-color': '#0A3961',
+                    'color': 'white'
+                });
+                $("#Detail").dialog('open');
+
+                return false;
+            });
+            //$("#lnkcreate").click(function () {
+            //    url = $(this).attr('href');
+            //    $(".ui-dialog-title").html("New Record");
+            //    $("#vital_sisgn").dialog('open');
+
+            //    return false;
+            //})
+
+        })
+    </script>
+
+}

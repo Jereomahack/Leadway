@@ -1,0 +1,164 @@
+﻿@model LightWay.Models.Fee
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Otherlayout.cshtml";
+}
+
+<div class="col-md-offset-5">
+    @*<img src="~/Content/images/Schlogo.png" width="100" />*@
+    @if (ViewBag.Logo != null)
+    {
+        <img src="data:image;base64,@System.Convert.ToBase64String(ViewBag.Logo)" width="100"  @*class="img-thumbnail"*@ />
+    }
+</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">@ViewBag.School PAYMENT INTERFACE</div>
+    <div class="panel-body">
+
+        @if (ViewBag.Message != null)
+        {
+            <div style="color:green;text-align:center; font-size:20px">
+                @ViewBag.Message
+            </div>
+        }
+
+        @using (Html.BeginForm("create", "fees", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PaymentType, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-8">
+                        @Html.DropDownListFor(model => model.PaymentType, new SelectListItem[]{
+                new SelectListItem() {Text = "Master/Verve/Visa Card", Value="Master/Verve/Visa Card"},
+  new SelectListItem() {Text = "Bank branch deposit/Quickteller/Phone USSD", Value="Bank branch deposit/Quickteller/Phone USSD"} }, "Select Payment Option", new { @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(model => model.PaymentType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StudentReg, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-8">
+                        @Html.TextBox("StudentReg", ViewBag.StudentReg as string, new { @class = "form-control input-sm", @id = "Reg" })
+                        @Html.TextBox("pubamt", "Yes", new { @class = "form-control", @id = "Name", @readonly = true, @style = "display:none" })
+                        @Html.ValidationMessageFor(model => model.StudentReg, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StudentName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-8">
+                        @Html.TextBox("StudentName ", ViewBag.name as string, new { @class = "Name form-control input-sm", @readonly = true })
+                        @Html.ValidationMessageFor(model => model.StudentName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AccSession, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-8">
+                        @Html.DropDownList("AccSession", ViewBag.AccSession as SelectList, new { @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(model => model.AccSession, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AccTerm, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-8">
+                        @Html.DropDownList("AccTerm", ViewBag.AccTerm as SelectList, new { @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(model => model.AccTerm, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-8">
+                        @Html.TextBox("Email", ViewBag.Email as string, new { @class = "form-control input-sm", @id = "email" })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-8">
+                        @Html.TextBox("PhoneNumber", ViewBag.PhoneNumber as string, new { @class = "form-control input-sm", @id = "phone" })
+                        @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.amount, "Amount", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-8">
+                        @Html.TextBox("Amt", ViewBag.Amt as string, new { @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(model => model.amount, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-2">
+                        <b>NGN</b>
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control input-sm", @rows = "5" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-8">
+                        <input type="submit" value="Proceed" class="btn btn-primary" />
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/Content/vendors/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#ddCat").change(function () {
+                var CatItem = $(this).val();
+                var SubItem = $("#ddSub");
+                $.ajax({
+                    cache: false,
+                    type: "GET",
+                    url: "@(Url.Action("GetSub", "Fees"))",
+                    data: { "Cat": CatItem },
+                    success: function (data) {
+                        SubItem.html('');
+                        $.each(data, function (id, option) {
+                            SubItem.append($('<option></option>').val(option.SubCatName).html(option.SubCatName));
+                        });
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        alert('Failed to retrieve Sub.');
+                    }
+                });
+            });
+            $("#Reg").focusout(function () {
+                var RegNo = $(this).val();
+
+                $.ajax({
+                    cache: false,
+                    type: "GET",
+                    url: "@(Url.Action("GetSub", "Fees"))",
+                    data: { "Reg": RegNo },
+                    success: function (data) {
+                        $(".Name").val(data.Surname + " " + data.OtherName);
+                        $("#email").val(data.EmailAddress);
+                        $("#phone").val(data.PhoneNumber);
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        alert('Failed to retrieve Child Full Name.');
+                    }
+                });
+            });
+        });
+    </script>
+
+}

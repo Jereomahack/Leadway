@@ -1,0 +1,394 @@
+﻿@model IEnumerable<leadaway.Models.Admission>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div ALIGN="center" class="text-primary">
+    <h1><b>LEADWAY ACADEMY</b></h1>
+</div>
+
+<div ALIGN="center" class="text-danger">
+    <h4>*CRECH* *PRE-NURSERY* *NURSERY* *PRIMARY* *SECONDARY*</h4>
+</div>
+<div ALIGN="center" class="text-primary">
+    <h2> APPLICATION/ADMISSION FORM</h2>
+</div>
+<div class=" btn btn-default">
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+    </div>
+<div class="panel panel-primary">
+    <div class="panel-heading"> SECTION A: PUPIL</div>
+    <div class="panel-body">
+
+
+
+        <table class="table">
+            <tr>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.FormNo)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.Surname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Firstname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Middlename)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateTime)
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.Passport)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.Allergic)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PoB)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SoO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Lga)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nationality)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Religion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Language)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Psa)
+                </th>
+                <th> Effect </th>
+
+            </tr>
+                        @foreach (var item in Model)
+            {
+                            <tr>
+                                @*<td>
+                                    @Html.DisplayFor(modelItem => item.FormNo)
+                                </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Surname)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Firstname)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Middlename)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Gender)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateTime)
+                                </td>
+                                @*<td>
+                                    @Html.DisplayFor(modelItem => item.Passport)
+                                </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Allergic)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PoB)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SoO)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Lga)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nationality)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Religion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Language)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Psa)
+                                </td>
+                                <td class="col-md-2">
+
+                                    @Html.ActionLink(" ", "Edit", "Admissions",
+                 new { id = item.Id }, new { @class = "glyphicon glyphicon-user  btn btn-primary btn-xs", @title = "Edit", @target = "_blank" })
+
+
+                                    @Html.ActionLink(" ", "Details", "Admissions",
+                 new { id = item.Id }, new { @class = "glyphicon glyphicon-lock  btn btn-danger btn-xs", @title = "Print", @target = "_blank" })
+
+
+
+
+
+                                </td>
+                            </tr>
+
+
+                            
+                        }
+</table>
+    </div>
+</div>
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">SECTION B: DETAILS OF PARENTS/GAURDIAN(S) FATHER</div>
+    <div class="panel-body">
+
+        <table class="table">
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Mtitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MsurnName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mrelationships)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mtelephone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Maddress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mgsmnumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MemailAddress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Moccupation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Memployer)
+                </th>
+                <th> Effect </th>
+                </tr>
+@foreach (var item in Model)
+            {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mtitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MsurnName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mrelationships)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mtelephone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Maddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mgsmnumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemailAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Moccupation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Memployer)
+        </td>
+
+        <td class="col-md-2">
+
+            @Html.ActionLink(" ", "Edit", "Admissions",
+                 new { id = item.Id }, new { @class = "glyphicon glyphicon-user  btn btn-primary btn-xs", @title = "Edit", @target = "_blank" })
+
+            
+
+            @Html.ActionLink(" ", "Details", "Admissions",
+                 new { id = item.Id }, new { @class = "glyphicon glyphicon-lock  btn btn-success btn-xs", @title = "Print", @target = "_blank" })
+
+
+
+        </td>
+    </tr>
+}
+            </table>
+        </div>
+    </div>
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">SECTION B: DETAILS OF PARENTS/GAURDIAN(S) MOTHER</div>
+                    <div class="panel-body">
+
+                        <table class="table">
+                            <tr>
+    <th>
+        @Html.DisplayNameFor(model => model.Ftitle)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.FsurnName)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Frelationships)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Ftelephone)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Faddress)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Fgsmnumber)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.FemailAddress)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Foccupation)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Femployer)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Discovery)
+    </th>
+     <th> Effect </th>
+                                </tr>
+    @foreach (var item in Model)
+            {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ftitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FsurnName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Frelationships)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ftelephone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Faddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fgsmnumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FemailAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Foccupation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Femployer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Discovery)
+        </td>
+        
+        <td class="col-md-2">
+            @Html.ActionLink(" ", "Edit", "Admissions",
+                 new { id = item.Id }, new { @class = "glyphicon glyphicon-user  btn btn-primary btn-xs", @title = "Edit", @target = "_blank" })
+
+
+
+            @Html.ActionLink(" ", "Details", "Admissions",
+                 new { id = item.Id }, new { @class = "glyphicon glyphicon-lock  btn btn-success btn-xs", @title = "Print", @target = "_blank" })
+
+
+        </td>
+                            </tr>
+                            }
+                        </table>
+                    </div>
+    </div>
+
+<div class="panel panel-primary">
+<div class="panel-heading">OFFICE USE </div>
+<div class="panel-body">
+
+   <table class="table">
+       <tr>
+
+           <th>
+               @Html.DisplayNameFor(model => model.DateRecieved)
+           </th>
+           <th>
+               @Html.DisplayNameFor(model => model.Dateofbirth)
+           </th>
+           <th>
+               @Html.DisplayNameFor(model => model.DateAssessment)
+           </th>
+           <th>
+               @Html.DisplayNameFor(model => model.YearGroup)
+           </th>
+           <th>
+               @Html.DisplayNameFor(model => model.Place)
+           </th>
+           <th>
+               @Html.DisplayNameFor(model => model.Startingdate)
+           </th>
+           <th> Effect</th>
+           </tr>
+           @foreach (var item in Model)
+            {
+               <tr>
+               <td>
+                   @Html.DisplayFor(modelItem => item.DateRecieved)
+               </td>
+               <td>
+                   @Html.DisplayFor(modelItem => item.Dateofbirth)
+               </td>
+               <td>
+                   @Html.DisplayFor(modelItem => item.DateAssessment)
+               </td>
+               <td>
+                   @Html.DisplayFor(modelItem => item.YearGroup)
+               </td>
+               <td>
+                   @Html.DisplayFor(modelItem => item.Place)
+               </td>
+               <td>
+                   @Html.DisplayFor(modelItem => item.Startingdate)
+               </td>
+                   <td class="col-md-2">
+                       @Html.ActionLink(" ", "Edit", "Admissions",
+                 new { id = item.Id }, new { @class = "glyphicon glyphicon-user  btn btn-primary btn-xs", @title = "Edit", @target = "_blank" })
+
+
+                       @Html.ActionLink(" ", "Details", "Admissions",
+                 new { id = item.Id }, new { @class = "glyphicon glyphicon-lock  btn btn-success btn-xs", @title = "Print", @target = "_blank" })
+
+                   </td>
+         </tr>
+           }
+   
+  </table>
+    </div>
+    </div>
+  
+
+  
+           
+          
+
+

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<LightWay.Models.Hostel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">HOSTEL INDEX</div>
+    <div class="panel-body">
+        @if (User.IsInRole("Accountant"))
+        {
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+        }
+
+
+        <table class="table table-bordered table-responsive table-striped">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.HostelName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Class)
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HostelName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Class)
+                    </td>
+
+                    <td>
+                        @if (User.IsInRole("Accountant"))
+                        {
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                        }
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

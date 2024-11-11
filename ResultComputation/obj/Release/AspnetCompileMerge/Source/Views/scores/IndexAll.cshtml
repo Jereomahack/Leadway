@@ -1,0 +1,1268 @@
+﻿@model IEnumerable<LightWay.Models.score>
+
+@*<div class="no-print">
+        @{
+            ViewBag.Title = "IndexFormMaster";
+        }
+    </div>*@
+
+@*<link rel="stylesheet" type="text/css" media="print" href="~/Content/css/bootstrap.css">*@
+
+<style type="text/css">
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        margin: 0;
+        padding: 0;
+    }
+
+    table {
+        border: 1px solid black;
+        border-spacing: 0px 0px;
+    }
+
+
+    th {
+        font-weight: bold;
+        vertical-align: top;
+        text-align: left;
+        border: 1px solid black;
+        padding: 2px;
+    }
+
+    td {
+        vertical-align: top;
+        text-align: left;
+        border: 1px solid black;
+        padding: 2px;
+    }
+
+    td2 {
+        vertical-align: top;
+        text-align: left;
+        padding: 2px;
+    }
+</style>
+
+<div class="container">
+    @if (ViewBag.NoDetails != null)
+    {
+        <div style="color:red">
+            @ViewBag.NoDetails
+        </div>
+    }
+    <div class="no-print hidden-print">
+        @using (Html.BeginForm("IndexAll", "Scores", FormMethod.Get))
+        {
+            <div class="row no-print">
+                <div class="col-md-2 no-print">
+                    <br />
+                    @Html.DropDownList("Class", ViewBag.ClassList as SelectList, new { @class = "form-control input-sm", @id = "StudtClass" })
+                </div>
+                <div class="col-md-3">
+                    Student Number @Html.DropDownList("StudtNum", ViewBag.StudtNumFilter as SelectList, new { @class = "form-control input-sm", @id = "StdntNo" })
+                </div>
+                <div class="col-md-3 no-print">
+                    <br />
+                    @Html.DropDownList("AccademicYear", (SelectList)ViewBag.AccademicYear, "Select Accademic Year", new { @class = "form-control input-sm" })
+                </div>
+                <div class="col-md-3 no-print">
+                    <br />
+                    @Html.DropDownList("Terms", (SelectList)ViewBag.Terms, "Select Term", new { @class = "form-control input-sm" })
+                </div>
+                <div class="col-md-1 no-print">
+                    <br />
+                    <input type="submit" value="Search" class="btn btn-primary" />
+                </div>
+            </div>
+            <br />
+            <br />
+
+        }
+    </div>
+</div>
+
+
+<div>
+    <div class="panel panel-primary col-md-offset-2" style="width:1100px">
+        <div class="panel-heading">LEARNER'S RESULT</div>
+        <div class="panel-body">
+            <div style="width:1050px">
+                <div style="width:100px;float:left">
+                    @*<img src="~/Content/images/Schlogo.png" width="100" height="90" />*@
+                    @if (ViewBag.Logo != null)
+                    {
+                        <img src="data:image;base64,@System.Convert.ToBase64String(ViewBag.Logo)" width="100" height="90" @*class="img-thumbnail"*@ />
+                    }
+                </div>
+
+                <div style="width:800px;float:left">
+                    <p style="text-align:center;color:red;font-size:40px;font-family:Arial, Helvetica, sans-serif"><b>@ViewBag.School</b></p>
+                    <p style="text-align:center;color:blue;font-size:20px;font-family:Courier New, Courier, monospace" class="textcolor"><b>@ViewBag.Address</b></>
+                    <p style="text-align:center;color:dodgerblue;font-size:12px;font-family:Courier New, Courier, monospace">@ViewBag.Others</p>
+
+                    @if (ViewBag.Category == "Pre-Nursery")
+                    {
+                        <p style="text-align:center;color:black;font-size:15px"><b>PRE-NURSERY SCHOOL CONTINUOUS ASSESSMENT  REPORT</b></p>
+                    }
+                    else if (ViewBag.Category == "Nursery")
+                    {
+                        <p style="text-align:center;color:black;font-size:15px"><b>NUSERY SCHOOL CONTINUOUS ASSESSMENT  REPORT</b></p>
+                    }
+                    else if (ViewBag.Category == "Primary")
+                    {
+                        <p style="text-align:center;color:black;font-size:15px"><b>PRIMARY SCHOOL CONTINUOUS ASSESSMENT  REPORT</b></p>
+                    }
+                    else if (ViewBag.Category == "Junior")
+                    {
+                        <p style="text-align:center;color:black;font-size:15px"><b>JUNIOR SECONDARY SCHOOL CONTINUOUS ASSESSMENT  REPORT</b></p>
+                    }
+                    else if (ViewBag.Category == "Senior")
+                    {
+                        <p style="text-align:center;color:black;font-size:15px"><b> SENIOR SECONDARY SCHOOL CONTINUOUS ASSESSMENT  REPORT</b></p>
+                    }
+                </div>
+                <div style="width:100px;float:left">
+                    @if (ViewBag.Passport != null)
+                    {
+
+                        <img src="data:image;base64,@System.Convert.ToBase64String( ViewBag.Passport)" width="90" height="90" class="img-thumbnail" />
+
+                    }
+                    else
+                    {
+                        <img src="#" width="120" height="120" class="img-thumbnail" />
+                    }
+
+                </div>
+
+                <br />
+                <br />
+            </div>
+
+
+
+            <br />
+
+            @* Result Sheet for student and Pupil in Secondary and Primary School *@
+            @if (ViewBag.Category == "Senior" || ViewBag.Category == "Junior" || ViewBag.Category == "Primary")
+            {
+
+
+                <div>
+                    <table style="table-layout:fixed ; width:1030px; border-collapse:collapse;">
+                        <tr>
+                            <th style="width:100px"><p><b>Surname: &emsp;@ViewBag.Surname</b></p></th>
+                            <th style="width:100px"><p><b>Other Name: &emsp; @ViewBag.OtherName</b></p></th>
+                            <td style="width:100px"><b>Admission N0:&emsp;@ViewBag.AdmissionNo</b></td>
+                            <td style="width:100px"><b>Class:&emsp;@ViewBag.Class</b></td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px"><b>Academic Year:&emsp;@ViewBag.AcademicYear</b></td>
+                            <td style="width:100px"><b>Term:&emsp;@ViewBag.Term</b></td>
+                            <th style="width:100px"><p><b>Term Ends:&emsp; @ViewBag.EndTerm</b></p></th>
+                            <th style="width:100px"><p><b>Term Begins:&emsp; @ViewBag.NextTerm</b></p></th>
+                        </tr>
+                        <tr>
+                            <th style="width:237px"><p><b>Next Term Fees:&emsp;NGN  @ViewBag.FeesPaid</b></p></th>
+                            <th style="width:316px"><p><b>Fees Owed:&emsp;NGN @ViewBag.FeesOwed</b></p></th>
+                            <th style="width:100px"><p><b>Nos. in Class :&emsp;  @ViewBag.Tclass</b></p></th>
+                            <th></th>
+                        </tr>
+                    </table>
+                    <br />
+                    <p style="text-align:justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:15px"><b>Academic Records</b></p>
+
+                    <table style="table-layout:fixed ; width:1030px; border-collapse:collapse;">
+                        <tr>
+                            <td style="width:200px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></td>
+                            <th style="width:50px">
+                                <strong> Cognititve</strong>
+                            </th>
+                            <th style="width:40px">
+                                <strong>Affective</strong>
+                            </th>
+                            <th style="width:57px">
+                                <strong>Psychomoto</strong>
+                            </th>
+                            <th style="width:25px">
+                                <strong>Exam</strong>
+                            </th>
+                            <th style="width:25px">
+                                <strong>Total</strong>
+                            </th>
+                            <th style="width:45px">
+                                <strong>Average</strong>
+                            </th>
+                            <th style="width:45px">
+                                <strong>Highest</strong>
+                            </th>
+                            <th style="width:45px">
+                                <strong>Lowest</strong>
+                            </th>
+                            <th style="width:40px">
+                                <strong>Grade</strong>
+                            </th>
+                            <th style="width:100px;text-align:left">
+                                <strong>Remark</strong>
+                            </th>
+
+                        </tr>
+
+                        <tr>
+                            <td style="width:200px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><b> Subjects</b></td>
+                            <td><b> 40%</b></td>
+                            <td><b> 10%</b></td>
+                            <td><b> 10%</b></td>
+                            <td><b> 40%</b></td>
+                            <td><b> 100%</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+
+
+                            <tr>
+
+                                <td style="width:200px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+                                    @Html.DisplayFor(modelItem => item.Subject)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FirstCA)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SecondCA)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Psychomoto)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Exam)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Total)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AVERAGE)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.HIGHEST)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LOWEST)
+                                </td>
+                                @if (item.GRADE == "F")
+                                {
+                                    <td style="color:red">
+                                        @Html.DisplayFor(modelItem => item.GRADE)
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GRADE)
+                                    </td>
+                                }
+                                @if (item.REMARK == "FAIL")
+                                {
+                                    <td style="color:red">
+                                        @Html.DisplayFor(modelItem => item.REMARK)
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.REMARK)
+                                    </td>
+                                }
+
+                            </tr>
+
+                        }
+                    </table>
+                    <br />
+                    <p style="text-align:justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:15px"><b>Term Result Summary</b></p>
+                    <table style="table-layout:fixed ; width:1030px; border-collapse:collapse;">
+                        <tr>
+                            <th>Total Cognitive</th>
+                            <th>Total Affective</th>
+                            <th>Total Psycomoto</th>
+                            <th>Total Exam</th>
+                            <th>Total Score</th>
+                            <th>Score Obtainable</th>
+                            <th>Overall Grade</th>
+                            <th>OverAll Rating</th>
+
+                        </tr>
+                        <tr>
+                            <td>@ViewBag.TotalCognitive</td>
+                            <td>@ViewBag.TotalAffective</td>
+                            <td>@ViewBag.TotalPsychomoto</td>
+                            <td>@ViewBag.TotalExam</td>
+                            <td>@ViewBag.TotalScore</td>
+                            <td>@ViewBag.ObtainableScore</td>
+
+
+                            @if (@ViewBag.TotalExam > 0)
+                            {
+
+                                if (ViewBag.OverAllGrades == "F")
+                                {
+                                    <td style="color:red">@ViewBag.OverAllGrades</td>
+                                }
+                                else
+                                {
+                                    <td>@ViewBag.OverAllGrades</td>
+                                }
+
+                                if (ViewBag.OverallRating == "FAIL")
+                                {
+                                    <td style="color:red">@ViewBag.OverallRating</td>
+                                }
+                                else
+                                {
+                                    <td>@ViewBag.OverallRating</td>
+                                }
+                            }
+                            else
+                            {
+                                <td></td>
+                                <td></td>
+                            }
+                    </table>
+
+
+                    @*@if (ViewBag.Term == "THIRD")
+                        {
+                            <p style="text-align:justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:15px"><b>Cumulative Scores</b></p>
+                            <table style="table-layout:fixed ; width:1050px; border-collapse:collapse;">
+                                <tr>
+                                    <th>First Term</th>
+                                    <th>Second Term</th>
+                                    <th>Third Term</th>
+                                    <th>C. AVERAGE</th>
+                                    <th>OverAll Grade</th>
+                                    <th>OverAll Rating</th>
+                                    <th>Statue</th>
+                                </tr>
+                                <tr>
+                                    <td>@ViewBag.FirstTerm</td>
+                                    <td>@ViewBag.SecondTerm</td>
+                                    <td>@ViewBag.ThirdTerm</td>
+                                    <td>@ViewBag.CAverage</td>
+
+
+
+
+                                    @if (ViewBag.OverallGrade == "F")
+                                    {
+                                        <td style="color:red">@ViewBag.OverallGrade</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@ViewBag.OverallGrade</td>
+                                    }
+
+                                    @if (ViewBag.OverallRating == "FAIL")
+                                    {
+                                        <td style="color:red">@ViewBag.OverallRating</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@ViewBag.OverallRating</td>
+                                    }
+                                    <td> @ViewBag.Statues</td>
+                            </table>
+                        }*@
+
+                    <div style="width:1050px;height:auto;position:relative;">
+                        <br />
+
+                        <table width="200" border="0" align="left" cellpadding="0" cellspacing="0" style="margin-right:10px;">
+                            <tr>
+                                <td style="text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:15px"><strong><b>PSYCHOMOTOR</b></strong></td>
+                                <td><b>5</b></td>
+                                <td><b>4</b></td>
+                                <td><b>3</b></td>
+                                <td><b>2</b></td>
+                                <td><b>1</b></td>
+                            </tr>
+                            <tr>
+                                <td>1.Handwriting</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none;border:0" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>2.Verbal, Fluency</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>3.Game, Sport</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>4.Handling of Tools</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>5.Drawing, Painting</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" name="checkboxName" id="checkname" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>6.Musical Skill</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" name="checkboxName" id="checkname" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                        </table>
+                        <table width="200" border="0" align="left" cellpadding="0" cellspacing="0" style="margin-right:10px;">
+                            <tr>
+                                <td style="text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:15px"><strong><b>AFFECTIVE AREAS</b></strong></td>
+                                <td><b>5</b></td>
+                                <td><b>4</b></td>
+                                <td><b>3</b></td>
+                                <td><b>2</b></td>
+                                <td><b>1</b></td>
+                            </tr>
+                            <tr>
+                                <td>1. Punctuality</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>2.Creativity</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>3.Reliability</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>4.Neatness</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>5.Politeness</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>6.Honesty</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+
+                        </table>
+
+                        <table width="200" border="0" align="left" cellpadding="0" cellspacing="0" style="margin-right:10px;">
+                            <tr>
+                                <td style="text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:15px">8. Relationship with our Pupil</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>7. Relationship with Teacher</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>9.Self Control</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>10.Promptness to Complete Work</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>11.Spirit of Cooperation</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            @*<tr>
+                                    <td>12.Preseverance</td>
+                                    <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                    <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                    <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                    <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                    <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                </tr>*@
+
+                        </table>
+                        <table width="50" border="0" align="left" cellpadding="0" cellspacing="0" style="margin-right:10px;">
+                            <tr>
+                                <td><b>Grading%</b></td>
+                            </tr>
+                            <tr>
+                                <td>80% and above</td>
+                                <td>A</td>
+                                <td>EXCELLENT</td>
+                            </tr>
+                            <tr>
+                                <td>70 - 79.99%</td>
+                                <td> B</td>
+                                <td>GOOD</td>
+                            </tr>
+                            <tr>
+                                <td>60 - 69.99%</td>
+                                <td>C</td>
+                                <td>CREDIT</td>
+                            </tr>
+                            <tr>
+                                <td>50 - 59.99</td>
+                                <td>D</td>
+                                <td>PASS</td>
+                            </tr>
+                            <tr>
+                                <td>40 - 49.99</td>
+                                <td>E</td>
+                                <td>PASS</td>
+                            </tr>
+                            <tr>
+                                <td>0 - 39.99</td>
+                                <td>F</td>
+                                <td>FAIL</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <table height="31" width="1030" cellspacing="0" cellpadding="0">
+                        <tbody>
+
+                            @if (ViewBag.TotalExam > 0)
+                            {
+                                if (ViewBag.OverAllGrades == "A")
+                                {
+                                    <tr height="51">
+                                        <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher <input type="text" name="N311principal_remarks" value="Excellent Performance keep it up." style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                        <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                            <b>
+                                                Sign / Stamp: <b>
+                                                </b>
+                                            </b>
+                                        </td>
+                                    </tr>
+
+                                    <tr height="51">
+                                        <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Excellent Performance keep it up." style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                        <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                            <b>
+                                                Sign / Stamp: <b>
+                                                </b>
+                                            </b>
+                                        </td>
+                                    </tr>
+                                }
+                                else if (ViewBag.OverAllGrades == "B")
+                                {
+                                    <tr height="51">
+                                        <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="Very Good result, Keep it Up" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                        <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                            <b>
+                                                Sign / Stamp: <b>
+                                                </b>
+                                            </b>
+                                        </td>
+                                    </tr>
+
+                                    <tr height="51">
+                                        <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Very Good result" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                        <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                            <b>
+                                                Sign / Stamp: <b>
+                                                </b>
+                                            </b>
+                                        </td>
+                                    </tr>
+                                }
+                                else if (ViewBag.OverAllGrades == "C")
+                                {
+                                    <tr height="51">
+                                        <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Good result" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                        <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                            <b>
+                                                Sign / Stamp: <b>
+                                                </b>
+                                            </b>
+                                        </td>
+                                    </tr>
+
+                                    <tr height="51">
+                                        <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Good result" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                        <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                            <b>
+                                                Sign / Stamp: <b>
+                                                </b>
+                                            </b>
+                                        </td>
+                                    </tr>
+                                }
+                                else if (ViewBag.OverAllGrades == "D")
+                                {
+                                    <tr height="51">
+                                        <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="Fair Result, Pls Study Harder" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                        <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                            <b>
+                                                Sign / Stamp: <b>
+                                                </b>
+                                            </b>
+                                        </td>
+                                    </tr>
+
+                                    <tr height="51">
+                                        <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Fair Result,You can do better" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                        <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                            <b>
+                                                Sign / Stamp: <b>
+                                                </b>
+                                            </b>
+                                        </td>
+                                    </tr>
+                                }
+                                else if (ViewBag.OverAllGrades == "E")
+                                {
+                                    <tr height="51">
+                                        <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="Fair Performance, Pls work Harder" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                        <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                            <b>
+                                                Sign / Stamp: <b>
+                                                </b>
+                                            </b>
+                                        </td>
+                                    </tr>
+
+                                    <tr height="51">
+                                        <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Fair Performance" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                        <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                            <b>
+                                                Sign / Stamp: <b>
+                                                </b>
+                                            </b>
+                                        </td>
+                                    </tr>
+                                }
+                                else if (ViewBag.OverAllGrades == "F")
+                                {
+
+                                    <tr height="51">
+                                        <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="Poor Performance, you can do much better." style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                        <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                            <b>
+                                                Sign / Stamp: <b>
+                                                </b>
+                                            </b>
+                                        </td>
+                                    </tr>
+
+                                    <tr height="51">
+                                        <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Poor Performance, Study Harder" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                        <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                            <b>
+                                                Sign / Stamp: <b>
+                                                </b>
+                                            </b>
+                                        </td>
+                                    </tr>
+                                }
+
+                            }
+                            else
+                            {
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+
+            }
+
+            @*Report Sheet For Nursery and Pre-Nursery*@
+            else if (ViewBag.Category == "Nursery" || ViewBag.Category == "Pre-Nursery")
+            {
+                <div>
+
+                    <table style="table-layout:fixed ; width:1030px; border-collapse:collapse;">
+                        <tr>
+                            <th style="width:100px"><p><b>Surname: &emsp;@ViewBag.Surname</b></p></th>
+                            <th style="width:100px"><p><b>Other Name: &emsp; @ViewBag.OtherName</b></p></th>
+                            <td style="width:100px"><b>Admission N0:&emsp;@ViewBag.AdmissionNo</b></td>
+                            <td style="width:100px"><b>Class:&emsp;@ViewBag.Class</b></td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px"><b>Academic Year:&emsp;@ViewBag.AcademicYear</b></td>
+                            <td style="width:100px"><b>Term:&emsp;@ViewBag.Term</b></td>
+                            <th style="width:100px"><p><b>Term Ending:&emsp; @ViewBag.EndTerm</b></p></th>
+                            <th style="width:100px"><p><b>Term Begin:&emsp; @ViewBag.NextTerm</b></p></th>
+                        </tr>
+                        <tr>
+                            <th style="width:237px"><p><b>Next Term Fee:&emsp;NGN  @ViewBag.FeesPaid</b></p></th>
+                            <th style="width:316px"><p><b>Fee Owed:&emsp;NGN @ViewBag.FeesOwed</b></p></th>
+                            <th style="width:100px"><p><b>No. in Class :&emsp;  @ViewBag.Tclass</b></p></th>
+                            <th></th>
+                        </tr>
+                    </table>
+                    <br />
+                    <p style="text-align:justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:15px"><b>Academic Records</b></p>
+
+                    <table style="table-layout:fixed ; width:1030px; border-collapse:collapse;">
+                        <tr>
+                            <td style="width:250px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Subjects</td>
+                            <th>
+                                <strong>Mark Obtainable</strong>
+                            </th>
+                            <th>
+                                <strong>Mark Obtained</strong>
+                            </th>
+                            <th>
+                                <strong>Class Average</strong>
+                            </th>
+                            @*<th >
+                                    <strong>Position</strong>
+                                </th>*@
+                            <th>
+                                <strong>Grade</strong>
+                            </th>
+                            <th>
+                                <strong>Remark</strong>
+                            </th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+
+
+                            <tr>
+
+                                <td style="width:200px;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+                                    @Html.DisplayFor(modelItem => item.Subject)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ObtainableScore)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Exam)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AVERAGE)
+                                </td>
+                                @if (item.GRADE == "F")
+                                {
+                                    <td style="color:red">
+                                        @Html.DisplayFor(modelItem => item.GRADE)
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GRADE)
+                                    </td>
+                                }
+                                @if (item.REMARK == "FAIL")
+                                {
+                                    <td style="color:red">
+                                        @Html.DisplayFor(modelItem => item.REMARK)
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.REMARK)
+                                    </td>
+                                }
+
+                            </tr>
+
+                        }
+                    </table>
+                    <br />
+                    <p style="text-align:justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:15px"><b>Term Result Summary</b></p>
+                    <table style="table-layout:fixed ; width:1030px; border-collapse:collapse;">
+                        <tr>
+                            <th>Total Obtainable Score</th>
+                            <th>Total Score Obtained</th>
+                            <th>Overall Grade</th>
+                            <th>OverAll Rating</th>
+
+                        </tr>
+                        <tr>
+                            <td>@ViewBag.Tobtainable</td>
+                            <td>@ViewBag.Tobtained</td>
+                            <td>@ViewBag.OverAllGrades</td>
+                            <td>@ViewBag.OverallRating</td>
+
+                    </table>
+
+                    @*@if (ViewBag.Term == "THIRD")
+                        {
+                            <p style="text-align:justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:15px"><b>Cumulative Scores</b></p>
+                            <table style="table-layout:fixed ; width:1050px; border-collapse:collapse;">
+                                <tr>
+                                    <th>First Term</th>
+                                    <th>Second Term</th>
+                                    <th>Third Term</th>
+                                    <th>C. AVERAGE</th>
+                                    <th>OverAll Grade</th>
+                                    <th>OverAll Rating</th>
+                                    <th>Statue</th>
+                                </tr>
+                                <tr>
+                                    <td>@ViewBag.FirstTerm</td>
+                                    <td>@ViewBag.SecondTerm</td>
+                                    <td>@ViewBag.ThirdTerm</td>
+                                    <td>@ViewBag.CAverage</td>
+
+                                    @if (ViewBag.OverallGrade == "F")
+                                    {
+                                        <td style="color:red">@ViewBag.OverallGrade</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@ViewBag.OverallGrade</td>
+                                    }
+
+                                    @if (ViewBag.OverallRating == "FAIL")
+                                    {
+                                        <td style="color:red">@ViewBag.OverallRating</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@ViewBag.OverallRating</td>
+                                    }
+                                    <td> @ViewBag.Statues</td>
+                            </table>
+                        }*@
+                    <div style="width:1030px;height:auto;position:relative;">
+                        <br />
+
+                        <table width="400" border="0" align="left" cellpadding="0" cellspacing="0" style="margin-right:10px;">
+                            <tr>
+                                <td style="text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:15px"><strong><b>AFFECTIVE DOMAIN</b></strong></td>
+                                <td><b>5</b></td>
+                                <td><b>4</b></td>
+                                <td><b>3</b></td>
+                                <td><b>2</b></td>
+                                <td><b>1</b></td>
+                            </tr>
+                            <tr>
+                                <td>1.Physical Development</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none;border:0" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>2.Health</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>3.Cleanliness</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>4.Attentiveness</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>5.General Conduct</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" name="checkboxName" id="checkname" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                        </table>
+                        <table width="400" border="0" align="left" cellpadding="0" cellspacing="0" style="margin-right:10px;">
+                            <tr>
+                                <td style="text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:15px"><strong><b>Psychomoto</b></strong></td>
+                                <td><b>5</b></td>
+                                <td><b>4</b></td>
+                                <td><b>3</b></td>
+                                <td><b>2</b></td>
+                                <td><b>1</b></td>
+                            </tr>
+                            <tr>
+                                <td>1. Game</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>2.Sport</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>3.Gymnastic</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>4.Handling of WorkShop</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>5.Drawing anf Painting Craft</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+                            <tr>
+                                <td>6.Musical</td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                                <td><input type="checkbox" style="width:30px;height:15px; outline-style:none" /></td>
+                            </tr>
+
+                        </table>
+                        <table width="200" border="0" align="left" cellpadding="0" cellspacing="0" style="margin-right:10px;">
+                            <tr>
+                                <td><strong>Grading%</strong></td>
+                            </tr>
+                            <tr>
+                                <td>80% and above</td>
+                                <td>A</td>
+                                <td>EXCELLENT</td>
+                            </tr>
+                            <tr>
+                                <td>70 - 79.99%</td>
+                                <td> B</td>
+                                <td>VERY GOOD</td>
+                            </tr>
+                            <tr>
+                                <td>60 - 69.99%</td>
+                                <td>B</td>
+                                <td>GOOD</td>
+                            </tr>
+                            <tr>
+                                <td>50 - 59.99</td>
+                                <td>C</td>
+                                <td>CREDIT</td>
+                            </tr>
+                            <tr>
+                                <td>40 - 49.99</td>
+                                <td>E</td>
+                                <td>PASS</td>
+                            </tr>
+                            <tr>
+                                <td>0 - 39.99</td>
+                                <td>F</td>
+                                <td>FAIL</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <table height="31" width="1030" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            @if (ViewBag.OverAllGrades == "A")
+                            {
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher <input type="text" name="N311principal_remarks" value="Excellent Performance keep it up." style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Excellent Performance keep it up." style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+                            }
+                            else if (ViewBag.OverAllGrades == "B")
+                            {
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="Very Good result, Keep it Up" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Very Good result" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+                            }
+                            else if (ViewBag.OverAllGrades == "C")
+                            {
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Good result" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Good result" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+                            }
+                            else if (ViewBag.OverAllGrades == "D")
+                            {
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="Fair Result, Pls Study Harder" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Fair Result,You can do better" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+                            }
+                            else if (ViewBag.OverAllGrades == "E")
+                            {
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="Fair Performance, Pls work Harder" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Fair Performance" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+                            }
+                            else if (ViewBag.OverAllGrades == "F")
+                            {
+
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="Poor Performance, you can do much better." style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="Poor Performance, Study Harder" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+                            }
+                            else
+                            {
+
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Form Teacher: <input type="text" name="N311principal_remarks" value="" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+
+                                <tr height="51">
+                                    <td class="pixdown" width="400" style="font-size: 14px; font-family: trebuchet ms;"><b>Principal's Remark: <input type="text" name="N311principal_remarks" value="" style="text-align: center; border: none; background: none; width: 390px; border-bottom: dashed 1px #333333; font: normal 15px Lucida handwriting; color: #000000" maxlength="35"></b></td>
+                                    <td class="pixdown" width="200" style="font-size: 14px; font-family: trebuchet ms;">
+                                        <b>
+                                            Sign / Stamp: <b>
+                                            </b>
+                                        </b>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#StudtClass").change(function () {
+                var selectedItem = $(this).val();
+                var ddlStates = $("#StdntNo");
+                $.ajax({
+                    cache: false,
+                    type: "GET",
+                    url: "@(Url.Action("GetNo", "scores"))",
+                    data: { "ClassId": selectedItem },
+                    success: function (data) {
+                        ddlStates.html('');
+                        $.each(data, function (id, option) {
+                            ddlStates.append($('<option></option>').val(option.StudentNumber).html(option.StudentNumber));
+                        });
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        alert('Failed to retrieve studebt Number.');
+                    }
+                });
+            });
+        });
+    </script>
+}
+
+
+
+
+

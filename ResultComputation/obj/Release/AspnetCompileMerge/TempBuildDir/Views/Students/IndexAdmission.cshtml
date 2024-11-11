@@ -1,0 +1,149 @@
+﻿@model IEnumerable<LightWay.Models.Admission>
+
+@{
+    ViewBag.Title = "IndexAdmission";
+}
+
+
+<table class="table table-bordered table-responsive table-condensed table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FormNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Firstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Middlename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StateOfOrigin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lga)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Religion)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FormNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Middlename)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nationality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StateOfOrigin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lga)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Religion)
+            </td>
+
+            <td>
+                @Html.ActionLink("Admit this Candidate", "Admission", new { id = item.Id },new { @class= "lnkvcreate btn btn-primary btn-xs" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div id="Admission" style="display:none"></div>
+<div id="Detail" style="display:none"></div>
+<div id="alertview" style="display:none">@TempData["MSG"]</div>
+
+@section Scripts{
+    <script src="~/Jquerry/jquery-1.10.2.min.js"></script>
+    <script src="~/Jquerry/jquerry-ui-min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var url = "";
+            $("#Admission").dialog({
+                title: 'Admit Student',
+                autoOpen: false,
+                width: 800,
+                height: 500,
+                modal: true,
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                draggable: true,
+                open: function (event, ui) {
+                    $(".ui-dialog-titlebar-close").hide();
+                    $(this).load(url);
+                },
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+          
+            $("#alertview").dialog({
+                title: 'Confirmation Message',
+                autoOpen: false,
+                modal: true,
+                height: 200,
+                width: 350,
+                draggable: true,
+                open: function (event, ui) {
+                    $(".ui-dialog-titlebar-close").hide();
+                },
+                buttons: {
+                    "OK": function () {
+                        $(this).dialog("close");
+                    },
+                }
+            });
+
+            if ('@TempData["MSG"]' != "") {
+                $("#alertview").dialog("open");
+            }
+
+            $(".lnkvcreate").click(function () {
+                url = $(this).attr('href');
+                $(".ui-dialog-title").html("Admit Student");
+                $(".ui-dialog-titlebar").css({
+                    'background-color': '#0A3961',
+                    'color': 'white'
+                });
+                $("#Admission").dialog("open");
+                return false;
+            });
+           
+
+        })
+    </script>
+
+}

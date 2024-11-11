@@ -1,0 +1,84 @@
+﻿@model LightWay.Models.ClassList
+
+@*@{
+        ViewBag.Title = "Create";
+    }*@
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Update CLASS and FORM MASTER</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Edit", "ClassLists", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <div style="color:red">
+                    @ViewBag.nodetails
+                </div>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ClassName, htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-7">
+                        @Html.EditorFor(Model => Model.ClassName, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
+                        @Html.ValidationMessageFor(model => model.ClassName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FormMaster, htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-7">
+                        @Html.DropDownList("FormMaster", (SelectList)ViewBag.FormMaster, "Select Teacher", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ClassName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+
+        @*<div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>*@
+    </div>
+</div>
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

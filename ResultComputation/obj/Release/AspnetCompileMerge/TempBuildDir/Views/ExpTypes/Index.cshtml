@@ -1,0 +1,74 @@
+﻿@model IEnumerable<LightWay.Models.ExpType>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "lnkc btn btn-primary"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpensesName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpensesName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+<div id="Adm" style="display:none"></div>
+    <script type="text/javascript">
+       
+            var url = "";
+            $("#Adm").dialog({
+                title: 'Update Scores',
+                autoOpen: false,
+                width: 750,
+                height: 500,
+                modal: true,
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                draggable: true,
+                open: function (event, ui) {
+                    $(".ui-dialog-titlebar-close").hide();
+                    $(this).load(url);
+                },
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+            $(".lnkc").click(function () {
+                url = $(this).attr('href');
+                $(".ui-dialog-title").html("New Expense Name");
+                $(".ui-dialog-titlebar").css({
+                    'background-color': '#0A3961',
+                    'color': 'white'
+                });
+                $("#Adm").dialog("open");
+                return false;
+            });
+            
+        
+    </script>
+
+

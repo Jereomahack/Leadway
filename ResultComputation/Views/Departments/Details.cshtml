@@ -1,0 +1,54 @@
+﻿@model LightWay.Models.Department
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading"> Delete Department </div>
+    <div class="panel-body">
+        <div>
+            <h4>Department</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.DepartmentName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DepartmentName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.HOD)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HOD)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.EnteredBy)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EnteredBy)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateRecorded)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DateRecorded)
+                </dd>
+            </dl>
+        </div>
+        @*<p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>*@
+
+    </div>
+</div>
+
+
+                           

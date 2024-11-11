@@ -1,0 +1,126 @@
+﻿@*@model IEnumerable<ResultComputation.Models.Payment>*@
+@model PagedList.IPagedList<LightWay.Models.Payment>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Payment Index</div>
+    <div class="panel-body">
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table table-bordered table-hover table-condensed table-responsive table-striped">
+            <tr>
+                <th>
+                    Student Num
+                </th>
+                <th>
+                    Student Name
+                </th>
+                <th>
+                    Class
+                </th>
+                <th>
+                    Term
+                </th>
+                <th>
+                    Session
+                </th>
+                <th>
+                    Amount Paid
+                </th>
+                <th>
+                    Balance
+                </th>
+                <th>
+                    Payment For
+                </th>
+                <th>
+                    Date Recorrded
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StudentNum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StudentName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Class)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Term)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Session)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Balance)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PaymentFor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateRecorded)
+                    </td>
+                    <td>
+                        @if (User.IsInRole("Accountant"))
+                        {
+                            if (item.Balance != 0)
+                            {
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                            }
+                        }
+
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+
+                        @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <br />
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("Index",
+                            new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

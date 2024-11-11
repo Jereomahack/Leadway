@@ -1,0 +1,152 @@
+﻿@model IEnumerable<LightWay.Models.score>
+
+@{
+    ViewBag.Title = "IndexDelete";
+}
+
+
+<div>
+    <div class="panel panel-primary">
+        <div class="panel-heading" style="text-align:center"><strong>DELETE SCORE RECORDS</strong></div>
+        <div class="panel-body">
+            <div style="color:red;font-size:20px;text-align:center">
+                @ViewBag.NoDetail
+            </div>
+            <div style="color:red;font-size:20px;text-align:center">
+                @ViewBag.Detail, Please note if deleted, the teacher will have to re-enter the score again for this student.
+            </div>
+
+            @using (Html.BeginForm("IndexDelete", "Scores", FormMethod.Get))
+            {
+                <div class="row no-print">
+                    <div class="col-md-3">
+                        Student Number @Html.TextBox("StudtNum", ViewBag.StudtNumFilter as string, new { @class = "form-control" })
+
+                    </div>
+                    <div class="col-md-3 no-print">
+                        <br />
+                        @Html.DropDownList("AccademicYear", (SelectList)ViewBag.AccademicYear, "Select Accademic Year", new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-3 no-print">
+                        <br />
+                        @Html.DropDownList("Terms", (SelectList)ViewBag.Terms, "Select Term", new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-3 no-print">
+                        <br />
+                        <input type="submit" value="Search" class="btn btn-primary" />
+                    </div>
+                </div>
+                <br />
+                <br />
+
+            }
+
+
+            <table class="table table-bordered table-condensed table-responsive">
+                <tr>
+                    <th>
+                        Adm No
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Surname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OtherName)
+                    </th>
+                    <th>
+                        Session
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Class)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Term)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Subject)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstCA)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SecondCA)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Psychomoto)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Exam)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Total)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AVERAGE)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HIGHEST)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LOWEST)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StudentNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Surname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OtherName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AcademicYear)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Class)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Term)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Subject)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstCA)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SecondCA)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Psychomoto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Exam)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Total)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AVERAGE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HIGHEST)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LOWEST)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

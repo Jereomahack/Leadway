@@ -1,0 +1,57 @@
+﻿@model LightWay.Models.Distribution
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="panel panel-primary">
+    <div class="panel-heading"> Distribution Detail</div>
+    <div class="panel-body">
+        <div>
+            <h4>Distribution</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Receiver)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Receiver)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Department)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Department)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ItemName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ItemName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Quantity)
+                </dd>
+
+
+
+            </dl>
+        </div>
+        @*<p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>*@
+
+    </div>
+</div>
+
+

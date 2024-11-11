@@ -1,0 +1,13 @@
+﻿@{
+
+    var controller = HttpContext.Current.Request.RequestContext.RouteData.Values["Controller"].ToString();
+    if (controller == "admissions"|| controller == "Admissions")
+    {
+        Layout = "~/Views/Shared/_Otherlayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+}

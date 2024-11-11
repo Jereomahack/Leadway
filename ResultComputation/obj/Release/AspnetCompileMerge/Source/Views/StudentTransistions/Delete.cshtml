@@ -1,0 +1,118 @@
+﻿@model ResultComputation.Models.StudentTransistion
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading"> Delete Student Transistion</div>
+    <div class="panel-body">
+        <div>
+            <h4>StudentTransistion</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.StudentNumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StudentNumber)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Surname)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Surname)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.OtherName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.OtherName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Gender)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Category)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Category)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Class)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Class)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateLeft)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DateLeft)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Passport)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Passport)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.RegisteredBy)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.RegisteredBy)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateRecorded)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DateRecorded)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-primary" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<LightWay.Models.Expenditure>
+@*@model PagedList.IPagedList<ResultComputation.Models.Expenditure>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />*@
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Index</div>
+    <div class="panel-body">
+
+        @if (User.IsInRole("Accountant"))
+        {
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+        }
+
+        <table class="table table-bordered table-hover table-responsive">
+            <tr>
+                <th>
+                    Amount
+                </th>
+                <th>
+                    From
+                </th>
+                <th>
+                    Statues
+                </th>
+                <th>
+                    Date Sent
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AmountRequested)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RequestedBy)
+                    </td>
+
+                    @if (item.Statues == "Approved")
+                    {
+                        <td style="color:green">
+                            @Html.DisplayFor(modelItem => item.Statues)
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Statues)
+                        </td>
+                    }
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateRecorded)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Read", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+        @*<br />
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+            @Html.PagedListPager(Model, page => Url.Action("Index",
+            new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+﻿@model LightWay.Models.ParentCode
+
+@{
+    ViewBag.Title = "Check";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Check Result</div>
+    <div class="panel-body">
+        @using (Html.BeginForm("IndexParent", "Scores", FormMethod.Get))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Check Result</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <br />
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.codes, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.codes, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.codes, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <br />
+                        <p style="font-size:20px">To view or print Learner's Previous Result's <a href="~/scores/IndexPreviousResult" class="btn btn-primary btn-sm">CLICK HERE</a> </p>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-primary">
+                            <div style="font-size:20px" class="col-md-offset-4"><b><u>Instruction</u></b></div>
+                            <div class="panel-body">
+                                <ul>
+                                    <li>
+                                        To Check your child result, please enter the code sent to your phone via sms.
+                                    </li>
+                                    <li>
+                                        If you forgot or misplaced to code, please contact the school Administartor by calling : <span style="color:green"> +234 ( 0)704 0079 595</span>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Check Result" class="btn btn-success" />
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

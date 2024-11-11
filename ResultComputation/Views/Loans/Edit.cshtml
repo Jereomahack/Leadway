@@ -1,0 +1,148 @@
+﻿@model LightWay.Models.Loan
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Edit Loan </div>
+    <div class="panel-body">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Loan</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Id)
+
+
+                @if (Model.Statues == "Closed")
+                {
+                    <div class="form-group ">
+                        <p class="control-label col-md-4"><b>Staff Name</b></p>
+                        <div class="col-md-8">
+                            @Html.TextBox("Name", ViewBag.Name as string, new { @class = "form-control", @readonly = "true" })
+                        </div>
+                    </div>
+                                        <div class="form-group ">
+                                            <p class="control-label col-md-4"><b>Staff Number</b></p>
+                                            <div class="col-md-8">
+                                                @Html.TextBox("Number", ViewBag.Number as string, new { @class = "form-control", @readonly = "true" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.AmountCollected, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            <div class="col-md-8">
+                                                @Html.EditorFor(model => model.AmountCollected, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                                                @Html.ValidationMessageFor(model => model.AmountCollected, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.AmountLeft, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            <div class="col-md-8">
+                                                @Html.EditorFor(model => model.AmountLeft, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                                                @Html.ValidationMessageFor(model => model.AmountLeft, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.AmountPayable, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            <div class="col-md-8">
+                                                @Html.EditorFor(model => model.AmountPayable, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                                                @Html.ValidationMessageFor(model => model.AmountPayable, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.AmountPaid, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            <div class="col-md-8">
+                                                @Html.EditorFor(model => model.AmountPaid, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                                                @Html.ValidationMessageFor(model => model.AmountPaid, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Reason, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            <div class="col-md-8">
+                                                @Html.EditorFor(model => model.Reason, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                                                @Html.ValidationMessageFor(model => model.Reason, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                }
+                else if (Model.Statues == "Open")
+                {
+                    <div class="form-group ">
+                        <p class="control-label col-md-4"><b>Staff Name</b></p>
+                        <div class="col-md-8">
+                            @Html.TextBox("Name", ViewBag.Name as string, new { @class = "form-control", @readonly = "true" })
+                        </div>
+                    </div>
+                                        <div class="form-group ">
+                                            <p class="control-label col-md-4"><b>Staff Number</b></p>
+                                            <div class="col-md-8">
+                                                @Html.TextBox("Number", ViewBag.Number as string, new { @class = "form-control", @readonly = "true" })
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.AmountCollected, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            <div class="col-md-8">
+                                                @Html.EditorFor(model => model.AmountCollected, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.AmountCollected, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.AmountPayable, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            <div class="col-md-8">
+                                                @Html.EditorFor(model => model.AmountPayable, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.AmountPayable, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.AmountLeft, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            <div class="col-md-8">
+                                                @Html.EditorFor(model => model.AmountLeft, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.AmountLeft, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Reason, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            <div class="col-md-8">
+                                                @Html.EditorFor(model => model.Reason, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Reason, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                }
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+

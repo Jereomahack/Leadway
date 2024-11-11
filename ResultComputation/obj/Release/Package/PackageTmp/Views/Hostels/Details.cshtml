@@ -1,0 +1,64 @@
+﻿@model LightWay.Models.Hostel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">  HOSTEL DETAIL </div>
+    <div class="panel-body">
+        <div>
+            <h4>Hostel</h4>
+            <hr />
+            <dl>
+                <dt>
+                    @Html.DisplayNameFor(model => model.HostelName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HostelName)
+                </dd>
+                <br />
+                <dt>
+                    @Html.DisplayNameFor(model => model.Class)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Class)
+                </dd>
+                <br />
+                <dt>
+                    @Html.DisplayNameFor(model => model.HostelAttendant)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HostelAttendant)
+                </dd>
+                <br />
+                <dt>
+                    @Html.DisplayNameFor(model => model.HostelAttendantPhone)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HostelAttendantPhone)
+                </dd>
+                <br />
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+

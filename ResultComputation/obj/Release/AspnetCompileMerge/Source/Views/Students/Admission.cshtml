@@ -1,0 +1,176 @@
+﻿@model LightWay.Models.Student
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@*<h2><b><span style="color:darkseagreen;font-family:Calibri;font-size:large">Student Registration</span></b></h2>*@
+
+
+@using (Html.BeginForm("Admission", "Students", FormMethod.Post, new { @class = "searchForm form-horizontal", enctype = "multipart/form-data", role = "form" }))
+            {
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @*<h4>Student</h4>*@
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+    <div style="color:red">
+        @ViewBag.ErrorInStudtNum
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-4" })
+        <div class="col-md-6">
+            @Html.DropDownListFor(model => model.Category, new SelectListItem[]{
+                                           new SelectListItem() {Text = "Senior", Value="Senior"},
+                new SelectListItem() {Text = "Junior", Value="Junior"},
+                                   new SelectListItem() {Text = "Primary", Value="Primary"},
+                                    new SelectListItem() {Text = "Nursery", Value="Nursery"},
+                                    new SelectListItem() {Text = "Pre-Nursery", Value="Pre-Nursery"}}, "Select Category", new { @class = "form-control input-sm" })
+            @*@Html.EditorFor(model => model.Gender, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+                <div class="form-group ">
+                    <p class="control-label col-md-4"><b>Class</b></p>
+                    <div class="col-md-6">
+                        @Html.DropDownList("Class", (SelectList)ViewBag.ClassListFiter, "Select class", new { @class = "form-control" })
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Weight, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-6">
+                        @Html.TextBox("AId", ViewBag.Id as string, new { @class = "form-control", @style = "display:none" })
+                        @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                        @Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Height, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.Height, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Height, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.GeneralSactisfaaction, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.GeneralSactisfaaction, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.GeneralSactisfaaction, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div>
+                    @ViewBag.message
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-8 col-md-10">
+                        <input type="submit" value="Admit Student" class="btn btn-primary" />
+                    </div>
+                </div>
+}
+
+<script src="~/Jquerry/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.searchForm').submit(function (e) {
+            e.preventDefault();
+            var $form = $(this);
+            $.post($form.attr("action"), $form.serialize()).done(function (res) {
+                alert(res.message);
+                window.top.location.reload();
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

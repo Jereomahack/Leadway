@@ -1,0 +1,124 @@
+﻿@*@model IEnumerable<ResultComputation.Models.Student>*@
+@model PagedList.IPagedList<LightWay.Models.Student>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@using (Html.BeginForm("Index", "Students", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+   
+            <div class="row">
+                <div class="col-md-4 col-md-offset-7">
+                    <div class="input-group">
+                        @Html.DropDownList("Class", (SelectList)ViewBag.ClassFilter, "Select Class", new { @class = "form-control input-sm" })
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary btn-sm" type="submit">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+                                <table class="table table-hover table-bordered table-responsive">
+                                    <tr>
+                                        <th>
+                                            Student Number
+                                        </th>
+                                        <th>
+                                            SurName
+                                        </th>
+                                        <th>
+                                            OtherName
+                                        </th>
+
+                                        <th>
+                                            Class
+                                        </th>
+
+                                    </tr>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.StudentNumber)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Surname)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.OtherName)
+                                            </td>
+
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Class)
+                                            </td>
+                                            @if (User.IsInRole("Teacher") && User.IsInRole("Form Master") || User.IsInRole("Class Teacher PRE-NUR") || User.IsInRole("Class Teacher NUR 1") || User.IsInRole("Class Teacher NUR 2") || User.IsInRole("Class Teacher NUR 3") || User.IsInRole("Class Teacher PRI 1") || User.IsInRole("Class Teacher PRI 2") || User.IsInRole("Class Teacher PRI 3") || User.IsInRole("Class Teacher PRI 4") || User.IsInRole("Class Teacher PRI 5") || User.IsInRole("Class Teacher PRI 6") || User.IsInRole("Teacher"))
+                                            {
+                                                <td>
+                                                    @Html.ActionLink("Update Result", "UpdateResult", "Students", new { id = item.Id, Clas = item.Class }, new { @class = "btn btn-primary btn-xs", @target="_blank" })
+                                                    @Html.ActionLink("New Result", "NewResult", "Students", new { id = item.Id }, new { @class = "btn btn-primary btn-xs", @target = "_blank" })
+                                                </td>
+                                            }
+                                        </tr>
+                                    }
+
+                                </table>
+}
+
+<br />
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("Index",
+                            new { page, sortOrder = ViewBag.CurrentSort, classFilter = ViewBag.ClassFilter }))
+
+
+        @*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+            @Html.PagedListPager(Model, page => Url.Action("Index",
+            new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

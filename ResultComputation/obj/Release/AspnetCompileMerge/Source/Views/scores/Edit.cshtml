@@ -1,0 +1,125 @@
+﻿@model LightWay.Models.score
+
+@{
+    ViewBag.Title = "Edit";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.StudentNumber)
+        @Html.HiddenFor(model => model.Surname)
+        @Html.HiddenFor(model => model.OtherName)
+        @Html.HiddenFor(model => model.AcademicYear )
+        @Html.HiddenFor(model => model.Term)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.StudentNumber, "Adm No.",htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.StudentNumber, new { htmlAttributes = new { @class = "form-control input-sm", @readonly = "true", @Value = ViewBag.StudentNum } })
+                @Html.ValidationMessageFor(model => model.StudentNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control input-sm", @readonly = "true" } })
+                @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Class, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Class, new { htmlAttributes = new { @class = "form-control input-sm", @Value = ViewBag.Class, @readonly = "true" } })
+                @Html.ValidationMessageFor(model => model.FirstCA, "", new { @class = "text-danger" })
+            </div>
+        </div>
+       
+        @if (ViewBag.Category == "Primary" || ViewBag.Category == "Senior" || ViewBag.Category == "Junior")
+        {
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FirstCA, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.FirstCA, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "0" } })
+                    @Html.ValidationMessageFor(model => model.FirstCA, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.SecondCA, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-6">
+                                    @Html.EditorFor(model => model.SecondCA, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "0" } })
+                                    @Html.ValidationMessageFor(model => model.SecondCA, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Psychomoto, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-6">
+                                            @Html.EditorFor(model => model.Psychomoto, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "0" } })
+                                            @Html.ValidationMessageFor(model => model.Psychomoto, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Exam, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-6">
+                                            @Html.EditorFor(model => model.Exam, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "0" } })
+                                            @Html.ValidationMessageFor(model => model.Exam, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+        }
+        else if (ViewBag.Category == "Nursery" || ViewBag.Category == "Pre-Nursery")
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => model.Exam, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Exam, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "0" } })
+                    @Html.ValidationMessageFor(model => model.Exam, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        }
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

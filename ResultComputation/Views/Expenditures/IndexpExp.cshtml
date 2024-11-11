@@ -1,0 +1,184 @@
+﻿@model IEnumerable<LightWay.Models.Expenditure>
+
+@{
+    ViewBag.Title = "IndexpExp";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Search Index</div>
+    <div class="panel-body">
+        <form action="~/Expenditures/IndexpExp" method="GET">
+            <div class="row">
+                <div class="col-md-3">
+                    <a style="color:red">Expenditure Type</a>    @Html.DropDownList("ExpType", ViewBag.ExpType as SelectList,"Select Expenditure Type", new
+{
+@class = "form-control input-sm" @*@id = "txtPatient"*@})
+                </div>
+                <div class="col-md-3">
+                    <a style="color:red">From </a> @Html.TextBox("SearchFrom", ViewBag.FromCurrentFilter as string, new { @class = "form-control input-sm", type = "date" })
+                </div>
+                <div class="col-md-3">
+                    <a style="color:red">To </a> @Html.TextBox("SearchTo", ViewBag.ToCurrentFilter as string, new { @class = "form-control input-sm", type = "date" })
+                </div>
+                <div class="col-md-3">
+                    <br />
+                    <input type="submit" value="Search" class="btn btn-primary input-sm" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@if (User.IsInRole("Accountant"))
+{
+    <p>
+        @Html.ActionLink("Create New", "Create", null, new { @class = "lnkvcreate btn btn-primary btn-xs" }) <a class="lnkvcreate" href="@Url.Action("Index", "ExpTypes")"><span class="btn btn-warning btn-xs">Expenses Type</span> </a>
+    </p>
+}
+
+
+<table class="table table-bordered table-condensed table-responsive table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DateRecorded)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpenditureType)
+        </th>
+        <th>
+            Amt. Req
+        </th>
+        <th>
+            App. Amt
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Purpose)
+        </th>
+        <th>
+            Requested by
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApprovedBy)
+        </th>
+        @*<th></th>*@
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateRecorded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpenditureType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountRequested)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountReleased)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Purpose)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApprovedBy)
+            </td>
+
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>*@
+        </tr>
+    }
+
+</table>
+
+<div id="Admission" style="display:none"></div>
+
+@section Scripts{
+    <script src="~/Jquerry/jquery-1.10.2.min.js"></script>
+    <script src="~/Jquerry/jquerry-ui-min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var url = "";
+            $("#Admission").dialog({
+                title: 'Update Scores',
+                autoOpen: false,
+                width: 800,
+                height: 500,
+                modal: true,
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                draggable: true,
+                open: function (event, ui) {
+                    $(".ui-dialog-titlebar-close").hide();
+                    $(this).load(url);
+                },
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                        window.top.location.reload();
+                    }
+                }
+            });
+            $("#Detail").dialog({
+                title: 'Update Scores',
+                autoOpen: false,
+                width: 800,
+                height: 500,
+                modal: true,
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                draggable: true,
+                open: function (event, ui) {
+                    $(".ui-dialog-titlebar-close").hide();
+                    $(this).load(url);
+                },
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+            
+
+            $(".lnkvcreate").click(function () {
+                url = $(this).attr('href');
+                $(".ui-dialog-title").html("New Expenditure");
+                $(".ui-dialog-titlebar").css({
+                    'background-color': '#0A3961',
+                    'color': 'white'
+                });
+                $("#Admission").dialog("open");
+                return false;
+            });
+            $(".lnkDetail").click("click", function (e) {
+                // e.preventDefault(); use this or return false
+                url = $(this).attr('href');
+                $(".ui-dialog-title").html("Details of Score");
+                $(".ui-dialog-titlebar").css({
+                    'background-color': '#0A3961',
+                    'color': 'white'
+                });
+                $("#Detail").dialog('open');
+
+                return false;
+            });
+            //$("#lnkcreate").click(function () {
+            //    url = $(this).attr('href');
+            //    $(".ui-dialog-title").html("New Record");
+            //    $("#vital_sisgn").dialog('open');
+
+            //    return false;
+            //})
+
+        })
+    </script>
+
+}

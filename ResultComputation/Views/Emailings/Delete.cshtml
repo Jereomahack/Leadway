@@ -1,0 +1,76 @@
+﻿@model LightWay.Models.Emailing
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">DELETE EVENT</div>
+    <div class="panel-body">
+        <div>
+            <h4>Event Notification</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Sender)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Sender)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Statues)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Statues)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateSent)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DateSent)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Message)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Message)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Reciever)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Reciever)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+

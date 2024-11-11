@@ -1,0 +1,541 @@
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csc.exe
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csc.exe.config
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csc.rsp
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csi.exe
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csi.rsp
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.AppContext.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.Collections.Immutable.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.Console.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.IO.FileSystem.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.Reflection.Metadata.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\vbc.exe
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\vbc.exe.config
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\vbc.rsp
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\VBCSCompiler.exe
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\VBCSCompiler.exe.config
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\ResultComputation.dll.config
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\ResultComputation.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\ResultComputation.pdb
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Antlr3.Runtime.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\EntityFramework.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\EntityFramework.SqlServer.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\itextsharp.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\itextsharp.xmlworker.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.Agent.Intercept.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.DependencyCollector.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.Web.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.WindowsServer.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.ApplicationInsights.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.Core.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Cookies.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Facebook.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Google.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.OAuth.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Twitter.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Web.Infrastructure.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\MvcCheckBoxList.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\MvcRazorToPdf.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Newtonsoft.Json.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Owin.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\PagedList.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\PagedList.Mvc.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Rotativa.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Helpers.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Mvc.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Optimization.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Razor.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.Deployment.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.Razor.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\WebGrease.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Antlr3.Runtime.pdb
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\EntityFramework.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\EntityFramework.SqlServer.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\itextsharp.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.DependencyCollector.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.Web.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.WindowsServer.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.ApplicationInsights.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Newtonsoft.Json.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\PagedList.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\PagedList.Mvc.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Helpers.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Mvc.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Razor.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.Deployment.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.Razor.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Optimization.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.Core.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Facebook.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Cookies.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.OAuth.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Google.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Twitter.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\obj\Release\LightWayAcademy.csprojResolveAssemblyReference.cache
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\obj\Release\ResultComputation.dll
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\obj\Release\ResultComputation.pdb
+C:\doc\c#\projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\RazorPDF.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csc.exe
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csc.exe.config
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csc.rsp
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csi.exe
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csi.rsp
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.AppContext.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.Console.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\vbc.exe
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\vbc.exe.config
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\vbc.rsp
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\VBCSCompiler.exe
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\ResultComputation.dll.config
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\ResultComputation.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\ResultComputation.pdb
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Antlr3.Runtime.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\EntityFramework.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\EntityFramework.SqlServer.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\itextsharp.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\itextsharp.xmlworker.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.Web.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.ApplicationInsights.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\MvcCheckBoxList.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\MvcRazorToPdf.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Newtonsoft.Json.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Owin.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\PagedList.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\PagedList.Mvc.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\RazorPDF.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Rotativa.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Helpers.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Mvc.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Optimization.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Razor.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.Deployment.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.Razor.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\WebGrease.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Antlr3.Runtime.pdb
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\EntityFramework.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\EntityFramework.SqlServer.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\itextsharp.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.Web.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.ApplicationInsights.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Newtonsoft.Json.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\PagedList.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\PagedList.Mvc.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Helpers.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Mvc.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Razor.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.Deployment.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.Razor.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Optimization.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\obj\Release\ResultComputation.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\obj\Release\ResultComputation.pdb
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem\ResultComputation\ResultComputation\ResultComputation\obj\Release\LightWayAcademy.csprojResolveAssemblyReference.cache
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csc.exe
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csc.exe.config
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csc.rsp
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csi.exe
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csi.rsp
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.AppContext.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.Console.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\vbc.exe
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\vbc.exe.config
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\vbc.rsp
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\VBCSCompiler.exe
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\ResultComputation.dll.config
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\ResultComputation.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\ResultComputation.pdb
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Antlr3.Runtime.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\EntityFramework.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\EntityFramework.SqlServer.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\itextsharp.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\itextsharp.xmlworker.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.Web.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.ApplicationInsights.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\MvcCheckBoxList.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\MvcRazorToPdf.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Newtonsoft.Json.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Owin.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\PagedList.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\PagedList.Mvc.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\RazorPDF.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Rotativa.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Helpers.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Mvc.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Optimization.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Razor.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.Deployment.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.Razor.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\WebGrease.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Antlr3.Runtime.pdb
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\EntityFramework.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\EntityFramework.SqlServer.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\itextsharp.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.Web.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.ApplicationInsights.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Newtonsoft.Json.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\PagedList.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\PagedList.Mvc.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Helpers.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Mvc.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Razor.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.Deployment.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.Razor.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Optimization.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\obj\Release\LightWayAcademy.csprojResolveAssemblyReference.cache
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\obj\Release\ResultComputation.dll
+C:\Users\PFD\OneDrive\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\obj\Release\ResultComputation.pdb
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csc.exe
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csc.exe.config
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csc.rsp
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csi.exe
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\csi.rsp
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.AppContext.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.Collections.Immutable.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.Console.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.IO.FileSystem.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\System.Reflection.Metadata.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\vbc.exe
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\vbc.exe.config
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\vbc.rsp
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\VBCSCompiler.exe
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\roslyn\VBCSCompiler.exe.config
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\ResultComputation.dll.config
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\ResultComputation.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\ResultComputation.pdb
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Antlr3.Runtime.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\EntityFramework.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\EntityFramework.SqlServer.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\itextsharp.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\itextsharp.xmlworker.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.Agent.Intercept.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.DependencyCollector.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.Web.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.WindowsServer.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.ApplicationInsights.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.Core.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Cookies.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Facebook.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Google.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.OAuth.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Twitter.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Web.Infrastructure.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\MvcCheckBoxList.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\MvcRazorToPdf.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Newtonsoft.Json.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Owin.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\PagedList.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\PagedList.Mvc.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\RazorPDF.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Rotativa.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Helpers.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Mvc.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Optimization.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Razor.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.Deployment.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.Razor.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\WebGrease.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Antlr3.Runtime.pdb
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\EntityFramework.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\EntityFramework.SqlServer.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\itextsharp.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.DependencyCollector.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.Web.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AI.WindowsServer.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.ApplicationInsights.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Newtonsoft.Json.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\PagedList.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\PagedList.Mvc.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Helpers.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Mvc.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Razor.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.Deployment.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.WebPages.Razor.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\System.Web.Optimization.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.Core.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Facebook.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Cookies.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.OAuth.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Google.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.Twitter.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\obj\Release\LightWayAcademy.csprojResolveAssemblyReference.cache
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\obj\Release\LightWay.Migrations.gdgdgdg.resources
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\obj\Release\LightWayAcademy.csproj.GenerateResource.Cache
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\obj\Release\LightWayAcademy.csproj.CoreCompileInputs.cache
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\obj\Release\ResultComputation.dll
+C:\me\Projects\LightWayResultSystem - Copy\ResultComputation\ResultComputation\ResultComputation\obj\Release\ResultComputation.pdb
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\csc.exe
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\csc.exe.config
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\csc.rsp
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\csi.exe
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\csi.rsp
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\System.AppContext.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\System.Collections.Immutable.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\System.Console.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\System.IO.FileSystem.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\System.Reflection.Metadata.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\vbc.exe
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\vbc.exe.config
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\vbc.rsp
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\VBCSCompiler.exe
+C:\me\Projects\Leadway Academy\ResultComputation\bin\roslyn\VBCSCompiler.exe.config
+C:\me\Projects\Leadway Academy\ResultComputation\bin\ResultComputation.dll.config
+C:\me\Projects\Leadway Academy\ResultComputation\bin\ResultComputation.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\ResultComputation.pdb
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Antlr3.Runtime.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\EntityFramework.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\EntityFramework.SqlServer.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\itextsharp.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\itextsharp.xmlworker.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.AI.Agent.Intercept.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.AI.DependencyCollector.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.AI.Web.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.AI.WindowsServer.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.ApplicationInsights.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.AspNet.Identity.Core.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Owin.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Owin.Security.Cookies.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Owin.Security.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Owin.Security.Facebook.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Owin.Security.Google.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Owin.Security.OAuth.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Owin.Security.Twitter.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Web.Infrastructure.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\MvcCheckBoxList.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\MvcRazorToPdf.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Newtonsoft.Json.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Owin.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\PagedList.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\PagedList.Mvc.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\RazorPDF.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Rotativa.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\System.Web.Helpers.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\System.Web.Mvc.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\System.Web.Optimization.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\System.Web.Razor.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\System.Web.WebPages.Deployment.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\System.Web.WebPages.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\System.Web.WebPages.Razor.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\WebGrease.dll
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Antlr3.Runtime.pdb
+C:\me\Projects\Leadway Academy\ResultComputation\bin\EntityFramework.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\EntityFramework.SqlServer.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\itextsharp.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.AI.DependencyCollector.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.AI.Web.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.AI.WindowsServer.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.ApplicationInsights.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Newtonsoft.Json.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\PagedList.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\PagedList.Mvc.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\System.Web.Helpers.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\System.Web.Mvc.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\System.Web.Razor.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\System.Web.WebPages.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\System.Web.WebPages.Deployment.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\System.Web.WebPages.Razor.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\System.Web.Optimization.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.AspNet.Identity.Core.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Owin.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Owin.Security.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Owin.Security.Facebook.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Owin.Security.Cookies.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Owin.Security.OAuth.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Owin.Security.Google.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Owin.Security.Twitter.xml
+C:\me\Projects\Leadway Academy\ResultComputation\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\me\Projects\Leadway Academy\ResultComputation\obj\Release\LightWayAcademy.csprojResolveAssemblyReference.cache
+C:\me\Projects\Leadway Academy\ResultComputation\obj\Release\LightWay.Migrations.gdgdgdg.resources
+C:\me\Projects\Leadway Academy\ResultComputation\obj\Release\LightWayAcademy.csproj.GenerateResource.Cache
+C:\me\Projects\Leadway Academy\ResultComputation\obj\Release\LightWayAcademy.csproj.CoreCompileInputs.cache
+C:\me\Projects\Leadway Academy\ResultComputation\obj\Release\ResultComputation.dll
+C:\me\Projects\Leadway Academy\ResultComputation\obj\Release\ResultComputation.pdb

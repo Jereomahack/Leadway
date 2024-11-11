@@ -1,0 +1,75 @@
+﻿@model LightWay.Models.Deduction
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Deduction Detail</div>
+    <div class="panel-body">
+        <div>
+            <h4>Deduction</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <dl>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.StaffNumber)&emsp;
+                            @Html.DisplayFor(model => model.StaffNumber)
+                        </dt>
+                        <br />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.StaffName):&emsp;
+                            @Html.DisplayFor(model => model.StaffName)
+                        </dt>
+                        <br />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DeductionType):&emsp;
+                            @Html.DisplayFor(model => model.DeductionType)
+                        </dt>
+                        <br />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DeductionAmount):&emsp;
+                            @Html.DisplayFor(model => model.DeductionAmount)
+                        </dt>
+                    </dl>
+                </div>
+                <div class="col-md-6">
+                    <dl>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Month):&emsp;
+                            @Html.DisplayFor(model => model.Month)
+                        </dt>
+                        <br />
+                        <dt>
+                            Deducted By:&emsp;
+                            @Html.DisplayFor(model => model.EnteredBy)
+                        </dt>
+                        <br />
+                        <dt>
+                            Deduction Date:&emsp;
+                            @Html.DisplayFor(model => model.DateofDdeduction)
+                        </dt>
+                        <br />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Session):&emsp;
+                            @Html.DisplayFor(model => model.Session)
+                        </dt>
+                        <br />
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Term):&emsp;
+                            @Html.DisplayFor(model => model.Term)
+                        </dt>
+                    </dl>
+                </div>
+            </div>
+            <hr />
+            <dl></dl>
+        </div>
+        @*<p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>*@
+
+    </div>
+</div>
+
